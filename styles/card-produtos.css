@@ -1,0 +1,222 @@
+.card-produto{
+    display: grid;
+    grid-template-rows: reapeat(auto-fit, minmax(260px, 50px));
+    gap: 5px;
+    height: 650px;
+    width: 300px;
+    background-color: var(--cor-branca);
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-produto__container__imagem{
+    display: flex;
+    position: relative;
+    margin: 20px;
+}
+
+.card-produto__imagem{
+    max-width: 260px;
+    max-height: 260px;
+    width: auto;
+    height: auto;
+}
+
+.card-produto__fav{
+    position: absolute;
+    cursor: pointer;
+}
+
+.card-produto__desconto{
+    position: absolute;
+    right: 0;
+    text-align: center;
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-verde-escuro);
+    color: var(--cor-branca);
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.card-produto__descricao{
+    font-family: var(--fonte-texto);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+.card-produto__com-desconto{
+    font-family: var(--fonte-texto);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 20px;
+}
+
+.card-produto__preco-original, .card-produto__parcelas{
+    font-family: var(--fonte-texto);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 20px;
+}
+/* div para substituir o espço do preço originalq aundo o desconto for zero */
+.div-substituicao-preco-desconto-zero{
+    display: flex;
+    margin: 0 20px;
+    height: 100px;
+}
+
+.card-produto__avaliacao{
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 0px 20px;
+    align-items: center;
+}
+
+.avaliacao__quantidade{
+    display: none;
+    background-color: var(--cor-cinza);
+    color: var(--cor-branca);
+    position: absolute;
+    top: 110%;
+    left: 60%;
+    width: auto;
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--cor-preta);
+    white-space: nowrap;
+}
+
+.card-produto__avaliacao:hover>.avaliacao__quantidade{
+    display: flex;
+}
+
+.avaliacao__estrela__imagem{
+    max-width: 25px;
+    max-height: 25px;
+    width: auto;
+    height: auto;
+}
+
+.card-produto__preco-original{
+    text-decoration: line-through;
+}
+
+.card-produto__botao-add-sacola{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+    height: 50px;
+    margin: 20px;
+    padding: 10px 15px;
+    background-color: var(--cor-verde-escuro);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.card-produto__botao-add-sacola:hover{
+    background-color: var(--cor-verde-claro);
+}
+
+.botao-add-sacola__texto{
+    text-align: center;
+    font-family: var(--fonte-texto);
+    color: var(--cor-branca);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.botao-add-sacola__imagem{
+    max-width: 35px;
+    max-height: 35px;
+    width: auto;
+    height: auto;
+}
+
+@media screen and (max-width: 1028px) {
+    .card-produto{
+        grid-template-rows: reapeat(auto-fit, 200px);
+        gap: 3px;
+        height: 500px;
+        width: 220px;
+    }
+    
+    .card-produto__container__imagem{
+        display: flex;
+        position: relative;
+        margin: 10px;
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .card-produto__imagem{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .card-produto__fav{
+        max-width: 30px;
+        max-height: 30px;
+        width: auto;
+        height: auto;
+    }
+    .card-produto__desconto{
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .card-produto__descricao{
+        font-size: 16px;
+        margin: 0 10px;
+    }
+    
+    .avaliacao__estrela__imagem{
+        max-width: 20px;
+        max-height: 20px;
+    }
+    .card-produto__avaliacao{
+        gap: 5px;
+        margin: 0px 10px;
+    }
+    .avaliacao__quantidade{
+        top: 100%;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .card-produto__com-desconto{
+        font-family: var(--fonte-texto);
+        font-size: 24px;
+        font-weight: 800;
+        margin: 0 10px;
+    }
+    
+    .card-produto__preco-original, .card-produto__parcelas{
+        font-family: var(--fonte-texto);
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 10px;
+    }
+
+    .card-produto__botao-add-sacola{
+        width: 170px;
+        height: 45px;
+        margin: 10px;
+        padding: 5px 15px;
+    }
+    .botao-add-sacola__texto{
+        font-size: 20px;
+    }
+    .botao-add-sacola__imagem{
+        max-width: 30px;
+        max-height: 30px;
+    }
+}

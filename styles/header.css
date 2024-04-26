@@ -1,0 +1,112 @@
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 3rem
+}
+
+.cabecalho__logo-pesquisa{
+    display: flex;
+    
+    gap: 1rem;
+}
+
+.cabecalho__logo-button{
+    background-image: var(--logo-completa);
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 45px;
+}
+
+.cabecalho__pesquisa{
+    display: grid;
+    grid-template-columns: 25vw 1.7rem;
+} 
+
+.pesquisa__form__input{
+    padding: .7rem;
+    width: 25vw;
+    height: 3rem;
+    border: 2px solid var(--cor-verde-escuro);
+    border-radius: 32px 0px 0px 32px;
+    font-size: 18px;
+    font-family: var(--fonte-texto);
+    padding: 20px;
+    color: var(--cor-verde-escuro);
+}
+
+.pesquisa__form__input::placeholder{
+    color: var(--cor-verde-escuro);
+}
+
+.pesquisa__form__input:focus{ /*Para remover a 'borda' ao clicar no campo de pesquisa*/
+    outline: 0;
+}
+
+.pesquisa__form__input:focus::-webkit-input-placeholder{ /*remover placeholder ao clicar no campo*/
+    color: transparent;
+}
+
+input[type="text"]::-ms-clear,
+input[type="text"]::-ms-reveal,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+.cabecalho__pesquisa__pesquisar{/*classe do botão pesquisar*/
+    background: var(--cor-verde-escuro);
+    border: none;
+    cursor: pointer;
+    width: 3rem;
+    max-height: 3rem;
+    border-radius: 0rem 2rem 2rem 0rem;
+}
+
+.cabecalho__pesquisa__lupa{
+    max-width:1.7rem;
+    max-height:1.7rem;
+    width: auto;
+    height: auto;
+    padding-right: .5rem;
+}
+
+.cabecalho__opcoes{
+    display: flex;
+    gap: 1.5rem
+}
+
+.cabecalho__opcoes__item{
+    display: flex;
+}
+
+@media screen and (max-width: 1028px) {
+    .cabecalho{
+        margin: 1rem 1rem
+    }
+}
+
+@media screen and (max-width: 800px){
+    .cabecalho__logo-button{
+        display: none;
+    }
+
+    .pesquisa__form__input{
+        width: 40vw;  
+    }
+
+    .cabecalho__pesquisa{
+        grid-template-columns: 40vw 1.7rem;
+    } 
+}
+
+@media screen and (max-width: 600px){
+    .pesquisa__form__input{
+        width: 30vw;
+    }
+    .cabecalho__pesquisa{
+        grid-template-columns: 30vw 1.7rem;
+    } 
+}

@@ -1,0 +1,60 @@
+.skincare, .infantil, .maquiagem, .masculino, .perfumaria{
+    margin: 5rem 1.4rem 3rem;
+}
+
+.produtos__titulo__texto{
+    font-family: var(--fonte-menu);
+    font-size: 48px;
+    font-weight: 700; 
+    text-align: center;
+    padding: 2rem;
+    color: var(--cor-verde-escuro);
+    text-shadow: 2px 2px 4px var(--cor-verde-claro);
+}
+
+.produtos__titulo__traco{
+    display: flex;
+    margin: 0 auto 3rem auto;
+    height: 5px;
+    width: 300px;
+    background-color: var(--cor-verde-escuro);
+}
+
+.produtos__container__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 2rem;
+}
+
+.sessao-produtos__final{
+    height: 5px;
+    width: 100%;
+    background-color: var(--cor-verde-escuro);
+}
+
+@media screen and (max-width: 1028px){
+    .produtos__titulo__texto{
+        font-size: 2rem;
+    }
+
+    .produtos__container__grid{
+        grid-template-columns: repeat(auto-fit, 220px);
+        gap: 1rem;
+    }
+
+    .skincare, .infantil, .maquiagem, .masculino, .perfumaria{
+        margin: 3rem 1rem 3rem;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .produtos__container__grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 700px){
+    .produtos__container__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

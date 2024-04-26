@@ -1,0 +1,192 @@
+.footer__links{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10vw, 18vw));
+    background-color: var(--cor-verde-escuro);
+    margin-top: 3rem;
+    padding: 2rem 3rem 5rem;
+}
+
+.coluna__links{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px
+}
+
+.coluna__social-media{
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+.coluna__links__titulo, .coluna__social-media__titulo{
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: var(--cor-branca);
+}
+
+.coluna__social-media__titulo{
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.coluna__item__link{
+    font-family: var(--fonte-texto);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
+.coluna__social-media__links{
+    display: flex;
+    gap: 20px;
+}
+
+.rodape{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--cor-verde-claro);
+    padding: 1.5rem 3rem;
+}
+
+.rodape__texto{
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cor-verde-escuro); 
+}
+
+.social-media__link__imagem{
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+
+.instagram{
+    background-image: url(../imagens/icones/instagram-verde.svg);
+}
+.instagram:hover{
+    background-image: url(../imagens/icones/instagram-branco.svg);
+}
+
+.facebook{
+    background-image: url(../imagens/icones/facebook-verde.svg);
+}
+.facebook:hover{
+    background-image: url(../imagens/icones/facebook-branco.svg);
+}
+
+.you-tube{
+    background-image: url(../imagens/icones/youtube-verde.svg);
+}
+.you-tube:hover{
+    background-image: url(../imagens/icones/youtube-branco.svg);
+}
+
+.tik-tok{
+    background-image: url(../imagens/icones/tiktok-verde.svg);
+}
+.tik-tok:hover{
+    background-image: url(../imagens/icones/tiktok-branco.svg);
+}
+
+.spotify{
+    background-image: url(../imagens/icones/spotify-verde.svg);
+}
+.spotify:hover{
+    background-image: url(../imagens/icones/spotify-branco.svg);
+}
+
+.linkedin{
+    background-image: url(../imagens/icones/linkedin-verde.svg);
+}
+.linkedin:hover{
+    background-image: url(../imagens/icones/linkedin-branco.svg);
+}
+
+.twitter{
+    background-image: url(../imagens/icones/X_Twitter-verde.svg);
+}
+.twitter:hover{
+    background-image: url(../imagens/icones/X_Twitter-branco.svg);
+}
+
+@media screen and (max-width: 1028px) {
+    .footer__links{
+        grid-template-columns: repeat(auto-fit, minmax(15vw, 30vw));
+        margin-top: 1rem;
+        padding: 1rem auto 3rem;
+        gap: 5%;
+    }
+    
+    .coluna__links__titulo, .coluna__social-media__titulo{
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .coluna__item__link{
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .coluna__social-media__links{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 30px);
+        gap: 15px;
+    }
+
+    .coluna__social-media{
+        grid-column-end: 5;
+
+    }
+
+    .social-media__link__imagem{
+        height: 30px;
+        width: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: .3s;
+    }
+
+    .rodape__texto{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .rodape{
+        background-color: var(--cor-verde-claro);
+        padding: 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .footer__links{
+        grid-template-columns: repeat(auto-fit, minmax(15vw, 30vw));
+        margin-top: 1rem;
+        padding: 1rem 1rem 3rem;
+        gap: 3%;
+    }
+    .coluna__social-media__links{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 30px);
+        gap: 10px;
+    }
+    .coluna__links{
+        gap: 10px
+    }
+    .coluna__links__titulo, .coluna__social-media__titulo{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .coluna__item__link{
+        font-size: 10px;
+    }
+    .rodape__texto{
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+

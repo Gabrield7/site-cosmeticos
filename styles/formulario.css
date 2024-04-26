@@ -1,0 +1,136 @@
+.formulario__conatainer-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15vw, 25vw));
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    row-gap: 1rem;
+}
+
+.formulario__titulo{
+    font-family: var(--fonte-texto);
+    font-size: 32px;
+    font-weight: 500;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    margin: 2rem;
+    color: var(--cor-verde-escuro);
+}
+
+.formulario__campo{
+    height: 50px;
+    width: 20vw;
+    margin: auto;
+    border: 1px solid var(--cor-verde-escuro);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--cor-verde-escuro);
+    font-family: var(--fonte-texto);
+    font-size: 20px;
+}
+
+.formulario__campo::placeholder{
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    color: var(--cor-verde-escuro);
+}
+
+.formulario__campo:focus{
+    outline-color: var(--cor-verde-escuro);
+}
+
+.formulario__campo:focus::-webkit-input-placeholder{ 
+    color: transparent;
+}
+
+/* Para remover o botão de limpeza do campo */
+input[type="text"]::-ms-clear,
+input[type="text"]::-ms-reveal,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+.formulario__botao{
+    background-color: var(--cor-verde-escuro);
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    border: none;
+    font-family: var(--fonte-texto);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--cor-branca);
+}
+
+.formulario__botao:hover{
+    border: 1px solid var(--cor-verde-claro);
+    cursor: pointer;
+}
+
+.formulario__observacao{
+    grid-row-end: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: justify;
+    margin: 1rem;
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--cor-verde-escuro)
+}
+
+.formulario__texto-privacidade{
+    color: var(--cor-preto);
+    
+}
+
+@media screen and (max-width: 1028px) {
+    .formulario__conatainer-grid{
+        max-width: 700px;
+        gap: 5vw;
+    }
+    
+    .formulario__campo{
+        font-size: 16px;
+        width: 18vw;
+    }
+
+    .formulario__botao{
+        width: 130px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .formulario__conatainer-grid{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto-fit, auto);
+    }
+    .formulario__campo{
+        font-size: 16px;
+        width: 70vw;
+    }
+    .formulario__botao{
+        width: 70vw;
+        font-size: 16px;
+    }
+
+    .formulario__titulo{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .formulario__observacao{
+        grid-row-end: 6;
+        grid-row-end: 7;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin: 2rem;
+    }
+}
