@@ -1,6 +1,6 @@
 import {intervalo} from "./carrossel.js"
 import {distribuiProdutos} from "./produtos.js"
-import {insereSecao} from "./menu-desktop.js"
+import {insereSecao} from "./menu.js"
 
 //MENU DESKTOP
 insereSecao('desktop');

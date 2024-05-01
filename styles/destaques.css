@@ -144,20 +144,20 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .destaque__titulo__texto{
-        font-size: 40px; /**/
-    }
-    
     .destaque{
         margin-top: 10%;
     }
+    .destaque__titulo__texto{
+        font-size: 40px;
+    }
     .spot__imagem{
-        width: 250px; /**/
+        width: 250px;
     }
     .spot__posicao{
-        width: 150px; /**/
-        bottom: 25px; /**/
-        right: 150px; /**/
+        width: 150px;
+        bottom: 25px;
+        right: 150px;
+        pointer-events: none; 
     }
     .spot__descricao{
         min-width: 360px; 
@@ -165,13 +165,15 @@
         top: 100%;
         font-size: 26px;
         z-index: 0;
+        pointer-events: none;
     }
     .galeria__destaque{
         gap: 200px;
-        
+        pointer-events: none;
     }
     .galeria__destaque__wrapper{
-        overflow: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
         margin: 1rem;
         cursor: grab; /* Define o cursor como o ícone de mover */
         user-select: none; /* Impede a seleção de texto dentro da área */
@@ -180,16 +182,6 @@
     .arrow-left,.arrow-right{
         display: none;
     }
-    .destaque__spot:hover>.spot__link>.spot__posicao{
-        right: 150px;
-        width: 150px;
-    }
-    .destaque__spot:hover>.spot__descricao{
-        opacity: 100%;
-        top: 100%;
-        font-size: 26px;
-        z-index: 0;
-    }
 }
 
 @media screen and (max-width: 700px) {
@@ -197,35 +189,25 @@
         height: 500px;
     }
     .destaque__titulo__texto{
-        font-size: 32px; /**/
+        font-size: 32px;
     }
     .spot__imagem{
-        width: 200px; /**/
+        width: 200px;
     }
     .spot__posicao{
-        width: 120px; /**/
-        bottom: 75px; /**/
-        right: 100px; /**/
+        width: 120px;
+        bottom: 75px;
+        right: 100px;
     }
     .spot__descricao{
-        min-width: 300px; /**/
+        min-width: 300px;
         opacity: 100%;
-        top: 80%; /**/
-        font-size: 22px; /**/
+        top: 80%;
+        font-size: 22px;
         z-index: 0;
     }
     .galeria__destaque{
         gap: 150px;  
-    }
-    .destaque__spot:hover>.spot__link>.spot__posicao{
-        right: 100px;
-        width: 120px;
-    }
-    
-    .destaque__spot:hover>.spot__descricao{
-        min-width: 300px;
-        top: 800%;
-        font-size: 22px;
     }
     
 }

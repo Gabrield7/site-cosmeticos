@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 1028px){
     .produtos__titulo__texto{
-        font-size: 2rem;
+        font-size: 40px;
     }
 
     .produtos__container__grid{
@@ -43,7 +43,32 @@
     }
 
     .skincare, .infantil, .maquiagem, .masculino, .perfumaria{
-        margin: 3rem 1rem 3rem;
+        margin: 3rem 1rem;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .produtos__titulo__texto{
+        font-size: 32px;
+    }
+
+    .produtos__container__grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .produtos__titulo__texto{
+        font-size: 24px;
+    }
+
+    .produtos__container__grid{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0;
+    }
+
+    .skincare, .infantil, .maquiagem, .masculino, .perfumaria{
+        margin: 2rem 1rem;
     }
 }
 

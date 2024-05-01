@@ -133,17 +133,13 @@ export async function insereSecao(tela){
 }
 
 const closeMobileButton = document.querySelector('.menu-hamburguer__close')
-export const iconeHamburguer = document.querySelector('.cabecalho__menu-hamburguer')
+const iconeHamburguer = document.querySelector('.cabecalho__menu-hamburguer')
 const menuMobile = document.querySelector('.menu-principal__mobile')
 
 const teste = document.getElementById('favoritos')
-//abrir menu hambúrguer
-// teste.addEventListener('click', ()=>{
-//     menuMobile.style.transform = 'translate(0, 0)';
-//     admFundo('','mobile');
-// });
 
-let secaoInserida = false;
+//carregar conteúdo do menu apenas quando o for aberto
+let secaoInserida = false; 
 iconeHamburguer.addEventListener('click', async ()=>{
     if(!secaoInserida){
         await insereSecao('mobile');
@@ -154,17 +150,22 @@ iconeHamburguer.addEventListener('click', async ()=>{
     
 })
 
-iconeHamburguer.addEventListener('click', ()=>{
-    menuMobile.style.transform = 'translate(0, 0)';
+//abrir menu hambúrguer
+iconeHamburguer.onclick = () => {
+    menuMobile.style.transform = 'translate(270px, 0)';
     admFundo('','mobile');
-});
-
+}
 //fechar menu hambúrguer
-closeMobileButton.addEventListener('click', ()=>{
+closeMobileButton.onclick = () => {
     menuMobile.style.transform = 'translate(-270px, 0)';
     admFundo('','mobile');
+}
+
+//Para impedir que o menu fique aberto quando a tela mudar de tamanho
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) {
+        menuMobile.style.transform = 'translate(-270px, 0)';
+        document.querySelector('.fundo__mobile').classList.add('hidden');
+    }
 });
-
-
-
 

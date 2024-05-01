@@ -220,3 +220,72 @@
         max-height: 30px;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .card-produto{
+        gap: 3px;
+        height: 370px;
+        width: 150px;
+    }
+    .card-produto__container__imagem{
+        display: flex;
+        position: relative;
+        margin: 10px;
+        max-width: 130px;
+        max-height: 130px;
+    }
+    .card-produto__imagem{
+        max-width: 130px;
+        max-height: 130px;
+    }
+    .card-produto__fav{
+        max-width: 20px;
+        max-height: 20px;
+        width: auto;
+        height: auto;
+    }
+    .card-produto__desconto{
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .card-produto__descricao{
+        font-size: 14px;
+    }
+    
+    .avaliacao__estrela__imagem{
+        max-width: 15px;
+        max-height: 15px;
+    }
+    .card-produto__avaliacao{
+        gap: 5px;
+    }
+    .avaliacao__quantidade{
+        top: 10%;
+        font-size: 10px;
+        left: 80%;
+    }
+
+    .card-produto__com-desconto{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .card-produto__preco-original, .card-produto__parcelas{
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .card-produto__botao-add-sacola{
+        width: 110px;
+        height: 35px;
+        padding: 5px 10px;
+    }
+    .botao-add-sacola__texto{
+        font-size: 14px;
+    }
+    .botao-add-sacola__imagem{
+        max-width: 20px;
+        max-height: 20px;
+    }
+}
