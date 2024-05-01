@@ -166,6 +166,7 @@ window.addEventListener('resize', () => {
     if (window.innerWidth > 800) {
         menuMobile.style.transform = 'translate(-270px, 0)';
         document.querySelector('.fundo__mobile').classList.add('hidden');
+        body.style.overflow = 'auto';
     }
 });
 
