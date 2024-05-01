@@ -1,14 +1,16 @@
 //SLIDER MENU
-let rolManual = document.querySelector('.botao-manual');
+//let rolManual = document.querySelector('.botao-manual');
 let SliderCount = 1;
 
 document.getElementById('botao1').checked = true;
 
-setInterval(() => {
-    slider()
-}, 5000)
+export function intervalo(){
+    setInterval(() => {
+        slider()
+    }, 5000)
+}
 
-function slider(){
+export function slider(){
     SliderCount++
 
     if(SliderCount > 5){

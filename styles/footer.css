@@ -24,6 +24,7 @@
     font-weight: 700;
     margin: 1rem 0;
     color: var(--cor-branca);
+    word-wrap: break-word;
 }
 
 .coluna__social-media__titulo{
@@ -37,10 +38,12 @@
     font-weight: 400;
     text-decoration: none;
     color: var(--cor-branca);
+    word-wrap: break-word;
 }
 
 .coluna__social-media__links{
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 

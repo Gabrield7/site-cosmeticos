@@ -8,550 +8,78 @@
     <link rel="shortcut icon" href="./imagens/icones/harmony-haven-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <script src="./produtos.js" defer></script>
-    <script src="./carrossel.js" defer></script>
+    <script type="module" src="./scripts/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js" defer></script> <!--lib para permitir arrastar tela-->
 </head>
 <body>
+    <!-- MENU PRINCIPAL - MOBILE -->
+    <aside class="menu-principal__mobile">
+        
+        <div class="menu-hamburguer__usuario__container">
+            <a href="#" class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></a>
+            <div class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</div>
+            <button type='button' class="menu-hamburguer__close hidden"></button>
+        </div>
+        
+        <div class="menu__scroller">
+            <ul class="menu-principal__lista__mobile">
+                <!-- Seções serão inseridas aqui -->
+            </ul>
+        </div>
+            
+    </aside>
+    <div class="fundo__mobile hidden"></div>
     <!-- HEADER -->
-    <header>
+    <header class="header">
         <nav class="cabecalho">
-            <div class="cabecalho__logo-pesquisa">
-                <a href="#">
-                    <button class="cabecalho__logo-button" aria-label="Harmony Haven">
-                        <!-- atribuir img ao button pelo js para add modo dark -->
-                        <img src="../imagens/icones/logo_completa-verde.svg" alt="Logo da Hermony Haven">
-                    </button>
-                </a>
+            <div class="nav__desktop">
+                <div class="cabecalho__logo-pesquisa">
+                    <button type='' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
+                    <a href="#">
+                        <button class="cabecalho__logo-button" aria-label="Harmony Haven">
+                            <!-- atribuir img ao button pelo js para add modo dark -->
+                            <img src="../imagens/icones/logo_completa-verde.svg" alt="Logo da Hermony Haven">
+                        </button>
+                    </a>
 
-                <div class="cabecalho__pesquisa">
-                    <form class="cabecalho__pesquisa__form">
-                        <input type="search" class="pesquisa__form__input" placeholder="Pesquisar">
-                    </form>
-                    <button class="cabecalho__pesquisa__pesquisar">
-                        <!-- atribuir img ao button pelo js para add modo dark (?)-->
-                        <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="cabecalho__pesquisa__lupa">
-                    </button>
+                    <div class="cabecalho__pesquisa">
+                        <form class="cabecalho__pesquisa__form">
+                            <input type="search" class="pesquisa__form__input" placeholder="Pesquisar">
+                        </form>
+                        <button class="cabecalho__pesquisa__pesquisar">
+                            <!-- atribuir img ao button pelo js para add modo dark (?)-->
+                            <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="cabecalho__pesquisa__lupa">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cabecalho__opcoes">
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone sol" id="modo"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de coração" id="favoritos"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de sacola de compras" id="sacola"></a> 
                 </div>
             </div>
-
-            <div class="cabecalho__opcoes">
-                <a href="#" class="cabecalho__opcoes__item modo">
-                    <!-- BOTAO DO DARK MODE-->
-                    <img src="./imagens/icones/dark-mode-verde.svg" alt="ícone sol">
-                </a>
-                <a href="#" class="cabecalho__opcoes__item">
-                    <img src="./imagens/icones/user-verde.svg" alt="ícone de usuário" class="cabecalho__opcoes__imagem">
-                </a>
-                <a href="#" class="cabecalho__opcoes__item">
-                    <img src="./imagens/icones/fav-verde.svg" alt="ícone de coração">
-                </a>
-                <a href="#" class="cabecalho__opcoes__item">
-                    <img src="./imagens/icones/compras-verde.svg" alt="ícone de sacola de compras">
-                </a>
+                
+            <div class="pesquisa__mobile">
+                <form class="pesquisa__form__mobile">
+                    <input type="search" class="form__input__mobile" placeholder="Pesquisar">
+                </form>
+                <button class="pesquisa__pesquisar__mobile">
+                    <!-- atribuir img ao button pelo js para add modo dark (?)-->
+                    <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="pesquisa__lupa__mobile">
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="menu-principal">
-            <!-- <div class="fundo"></div> -->
-            <ul class="menu-principal__lista">
-                <!-- LANÇAMENTOS -->
-                <il class="menu-principal__lista__item" id="lancamentos">
-                    <a href="#" class="item__link">Lançamentos</a>
-                    <div class="item__sessao">
-                        <a href="#" class="item__sessao__banner">
-                            <img src="./imagens/banners/lunch1.png" alt="banner vertical do Sinfonía Primavera Dourada" class="item__sessao__banner">
-                        </a>
-                        <a href="#" class="item__sessao__banner">
-                            <img src="./imagens/banners/lunch3.png" alt="banner vertical do Invuctus Noir" class="item__sessao__banner">
-                        </a>
-                        <a href="#" class="item__sessao__banner">
-                            <img src="./imagens/banners/lunch2.png" alt="banner vertical do Sunglow Supreme" class="item__sessao__banner">
-                        </a>
-                    </div>
-                    <div class="fundo"></div>
-                </il>
-                <!-- PROMOÇÕES -->
-                <il class="menu-principal__lista__item" id="promocoes">
-                    <a href="#" class="item__link">Promoções</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Gerais</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Outlet</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cupons de desconto</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Primeira compra</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Frete grátis</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Amostras</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Termos e condições</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Especiais</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Novidades em promo</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Ofertas relâmpago</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Recomendados para você</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link"><i class="italic">HHColabs</i></a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Kits</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Marcas</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Por categoria</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Skincare</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Maquiagem</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cabelos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Corpo e banho</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Perfumaria</a> 
-                            </il>
-                        </ul>
-                    </div>
-                    <div class="fundo"></div>
-                </il>
-                <!-- PERFUMARIA -->
-                <il class="menu-principal__lista__item" id="perfumaria">
-                    <a href="#" class="item__link">Perfumaria</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Colônias</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Infantil</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Masculino</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Feminino</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Unissex</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Casa</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Kits</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Aromas</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Frutíferos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cítricos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Doces</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link"><i>Natureza</i></a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Floral</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Amadeirado</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Estações</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Primavera</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Verão</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Outono</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Inverno</a> 
-                            </il>
-                        </ul>
-                    </div>
-                    <div class="fundo"></div>    
-                </il>
-                <!-- CORPO E BANHO -->
-                <il class="menu-principal__lista__item posicao-centro" id="corpo-e-banho">
-                    <a href="#" class="item__link">Corpo e Banho</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Banho</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sabonetes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Esfoliantes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Infantil</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Íntimo</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Desodorante</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Aerosol</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cremes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Roll-on</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Masculino</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cuidados com a barba</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Pós-barba</a> 
-                            </il>
-                        </ul>
-                    </div>
-                    <div class="fundo"></div> 
-                </il>
-                <!-- MAKE -->
-                <il class="menu-principal__lista__item posicao-centro" id="make">
-                    <a href="#" class="item__link">Make</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Boca</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Batom</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Delineadores</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Gloss</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Rosto</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Bases</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Blush</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Iluminador</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link"><i>Pó facial</i></a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Olhos</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Delineadores</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Máscara para cílios</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sombra</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Corpo e banho</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Perfumaria</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Maquiagem</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Acessórios para maquiagem</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sobramcelhas</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Paleta de maquiagem</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Unhas</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Kits</a> 
-                            </il>
-                        </ul>
-                    </div>
-                    <div class="fundo"></div>
-                </il>
-                <!-- CABELOS -->
-                <il class="menu-principal__lista__item posicao-centro" id="cabelos">
-                    <a href="#" class="item__link">Cabelos</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Produtos</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Shampoo</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Condicionadores</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Máscaras</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Finalizadores</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cremes</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Tipo de cabelo</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Lisos (curvaturas 1A e 1B)</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Liso ondulado (curvaturas 1C e 2A)</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Ondulados (curvaturas 2B e 2C)</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cacheados (curvaturas 3A a 3C)</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Crespo (curvaturas 4A a 4C)</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Danosos</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Pontas duplas</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Com química</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Ressecados</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Frizz</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sem brilho</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Cor</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Loiros</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Grisalhos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Pretos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Castanhos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Mechas/Luzes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Outras</a> 
-                            </il>
-                        </ul>
-                    </div>
-                    <div class="fundo"></div> 
-                </il>
-                <!-- SKIN CARE -->
-                <il class="menu-principal__lista__item posicao-centro" id="skincare">
-                    <a href="#" class="item__link">Skin Care</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Rosto</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Hidratantes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Ácidos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Anti-acne</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Hidratantes labiais</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Protetores solar facial</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sabonetes faciais</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Corpo</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Protetores solar corporal</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Mãos e pés</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Antitranspirantes</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Óleos Corporais</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Tipos de pele</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Oleosa</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Ressecada</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sensível</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Mista</a> 
-                            </il>
-                        </ul>                        
-                    </div>
-                    <div class="fundo"></div>
-                </il>
-                <!-- INFANTIL -->
-                <il class="menu-principal__lista__item posicao-centro" id="infantil">
-                    <a href="#" class="item__link">Infantil</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Produtos</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Fragrâncias</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Corpo e banho</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cabelos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Conjuntos</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Presentes</a> 
-                            </il>
-                        </ul>                       
-                    </div>
-                    <div class="fundo"></div>
-                </il>
-                <!-- MARCAS -->
-                <il class="menu-principal__lista__item posicao-direita" id="marcas">
-                    <a href="#" class="item__link" id="marcas">Marcas</a>
-                    <div class="item__sessao__topicos">
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo">Perfumaria</il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Belle Perle</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sinfonía</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Tiny Tots</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Gentleman's Elixir</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Skin Care</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Silk Skin</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sweet Sprouts</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sunglow</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Corpo e Banho</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Whispers</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Aqua Aura</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Cecilia</a> 
-                            </il>
-                        </ul> 
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Maquiagem</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Aquarella</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Canvas Couture</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Divino</a> 
-                            </il>
-                        </ul>
-                        <ul class="sessao__lista">
-                            <il class="sessao__lista__titulo"><b>Cabelos</b></il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Harmonicleans</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Sudsy Fountain</a> 
-                            </il>
-                            <il class="sessao__lista__item">
-                                <a href="#" class="lista__item__link">Vigor Blend</a> 
-                            </il>
-                        </ul>                          
-                    </div>
-                    <div class="fundo"></div>
-                </il>   
-            </ul> 
+        <!-- MENU PRINCIPAL - DESKTOP -->
+        <section class="menu-principal__desktop">
+            <ul class="menu-principal__lista__desktop">
+                <div class="fundo__desktop hidden"></div>
+                <!-- Seções serão inseridas aqui -->
+            </ul>
         </section>
         <!-- CARROSSEL PRINCIPAL -->
         <section class="slider">
@@ -606,20 +134,17 @@
         <section class="destaque">
             <!-- <div class="detaque__titulo"> -->
             <h1 class="destaque__titulo__texto">TOP 5 Fragrâncias mais vendidas</h1>
-            <!-- <span class="destaque__titulo__traco__transparent"></span>
-            <span class="destaque__titulo__traco"></span> -->
-            <!-- </div> -->
             <div class="slider__destaque">
                 
                 <button class="arrow-left control" aria-label="destaque anterior">❮</button>
                 <button class="arrow-right control" aria-label="próximo destaque">❯</button>
                 
-                <div class="galeria__destaque__wrapper">
+                <div class="galeria__destaque__wrapper dragscroll">
 
                     <div class="galeria__destaque">
                         
                         <div class="destaque__spot primeiro-slide">
-                            <a href="#" class="spot__link">
+                            <a class="spot__link">
                                 <img src="./imagens/icones/1-verde.png" alt="Número 1" class="spot__posicao">
                                 <img src="./imagens/produtos/destaque-sinfonia-flower-sounds.png" alt="Fragrância Sinfonia Flower Sounds" class="spot__imagem">
                             </a>
@@ -627,7 +152,7 @@
                         </div>
 
                         <div class="destaque__spot">
-                            <a href="#" class="spot__link">
+                            <a class="spot__link">
                                 <img src="./imagens/icones/2-verde.png" alt="Número 2" class="spot__posicao">
                                 <img src="./imagens/produtos/destaque-belleperle-colibri.png" alt="Fragrância Belle Perle Colibri" class="spot__imagem">
                             </a>
@@ -635,7 +160,7 @@
                         </div>
 
                         <div class="destaque__spot">
-                            <a href="#" class="spot__link">
+                            <a class="spot__link">
                                 <img src="./imagens/icones/3-verde.png" alt="Número 3" class="spot__posicao">
                                 <img src="./imagens/produtos/destaque-sinfonia-fores.png" alt="Fragrância Sinfonia Fores" class="spot__imagem">
                             </a>
@@ -643,7 +168,7 @@
                         </div>
 
                         <div class="destaque__spot">
-                            <a href="#" class="spot__link">
+                            <a class="spot__link">
                                 <img src="./imagens/icones/4-verde.png" alt="Número 4" class="spot__posicao">
                                 <img src="./imagens/produtos/destaque-sinfonia-chuvas-verao.png" alt="Fragrância Sinfonia Chuvas de Verão" class="spot__imagem">
                             </a>
@@ -651,7 +176,7 @@
                         </div>
 
                         <div class="destaque__spot">
-                            <a href="#" class="spot__link">
+                            <a class="spot__link">
                                 <img src="./imagens/icones/5-verde.png" alt="Número 4" class="spot__posicao">
                                 <img src="./imagens/produtos/destaque-belleperle-cerise.png" alt="Fragrância Belle Perle Cerise" class="spot__imagem">
                             </a>
@@ -665,43 +190,33 @@
         </section>
 
         <!-- PRODUTOS PERFUMARIA FEMININA -->
-        <section class="sessao-produtos">
+        <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Desperte sua essência com fragrâncias que contam sua história</h1>
-            <span class="produtos__titulo__traco"></span>
             <div class="produtos__container__grid perfumaria"></div>
-            <div class="sessao-produtos__final"></div>
         </section>
 
         <!-- PRODUTOS SKIN CARE -->
-        <section class="sessao-produtos">
+        <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Revitalize seu corpo, renove sua alma</h1>
-            <span class="produtos__titulo__traco"></span>
             <div class="produtos__container__grid skincare"></div>
-            <div class="sessao-produtos__final"></div>
         </section>
 
         <!-- PRODUTOS INFANTIL -->
-        <section class="sessao-produtos">
-            <h1 class="produtos__titulo__texto">Uma aventura mágica para os pequenos</h1>
-            <span class="produtos__titulo__traco"></span>
-            <div class="produtos__container__grid infantil"></div>
-            <div class="sessao-produtos__final"></div>
+        <section class="secao-produtos">
+            <h1 class="produtos__titulo__texto">Uma aventura mágica para os pequenos</h1> 
+            <div class="produtos__container__grid infantil"></div>       
         </section>
 
         <!-- PRODUTOS MAQUIAGEM -->
-        <section class="sessao-produtos">
+        <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Torne-se sua própria obra-prima</h1>
-            <span class="produtos__titulo__traco"></span>
-            <div class="produtos__container__grid maquiagem"></div>
-            <div class="sessao-produtos__final"></div>
+            <div class="produtos__container__grid maquiagem"></div>    
         </section>
 
         <!-- PRODUTOS MASCULINOS -->
-        <section class="sessao-produtos">
+        <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Desperte a essência do seu poder masculino</h1>
-            <span class="produtos__titulo__traco"></span>
             <div class="produtos__container__grid masculino"></div>
-            <div class="sessao-produtos__final"></div>
         </section>
 
         <!-- SESSÃO DE CADASTRO DE USUÁRIO -->

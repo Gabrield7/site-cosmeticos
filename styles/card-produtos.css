@@ -1,7 +1,8 @@
 .card-produto{
     display: grid;
-    grid-template-rows: reapeat(auto-fit, minmax(260px, 50px));
+    /* grid-template-rows: reapeat(auto-fit, minmax(260px, 50px)); */
     gap: 5px;
+    margin: auto;
     height: 650px;
     width: 300px;
     background-color: var(--cor-branca);
@@ -92,7 +93,7 @@
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--cor-preta);
-    white-space: nowrap;
+    white-space: nowrap; /*Para impedir a quebra do texto*/
 }
 
 .card-produto__avaliacao:hover>.avaliacao__quantidade{
@@ -145,7 +146,6 @@
 
 @media screen and (max-width: 1028px) {
     .card-produto{
-        grid-template-rows: reapeat(auto-fit, 200px);
         gap: 3px;
         height: 500px;
         width: 220px;

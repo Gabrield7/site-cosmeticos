@@ -99,8 +99,8 @@ section.slider{
     }
 }
 
-@media screen and (max-width: 700px) {
-    .slider-rolagem-manual, .slider-rolagem-auto{
+@media screen and (max-width: 500px) {
+    .slider-rolagem-manual .botao-manual, .slider-rolagem-auto div{
         display: none;
     }
 }

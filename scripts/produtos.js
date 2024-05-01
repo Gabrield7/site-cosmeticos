@@ -1,10 +1,7 @@
 const cardProdutoGrid = document.querySelectorAll(".produtos__container__grid");
-const star = document.querySelector('.card-produto__avaliacao');
-const produtos = fetch('./backend/produtos.json').then((response) => {
-    return response.json()
-});
+// const star = document.querySelector('.card-produto__avaliacao');
 
-function avaliacao(nota){
+export function avaliacao(nota){
     let stars = ""
     let countStars = 0;
     let star = function(estrela){
@@ -46,15 +43,15 @@ function avaliacao(nota){
     } 
 }
 
-function arredondarPreco(preco){
+export function arredondarPreco(preco){
     return (Math.round(preco)-0.1)
 }
 
-function formatarPreco(preco){
+export function formatarPreco(preco){
     return preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
 
-function precoOriginal(precoOriginal, desconto){
+export function precoOriginal(precoOriginal, desconto){
     if(desconto === 0){
         return "<div class='.div-substituicao-preco-desconto-zero'></div>"
     }else{
@@ -62,7 +59,7 @@ function precoOriginal(precoOriginal, desconto){
     }
 }
 
-function etiquetaDesconto(desconto){ 
+export function etiquetaDesconto(desconto){ 
     if(desconto === 0){
         return ""
     }else{
@@ -70,19 +67,19 @@ function etiquetaDesconto(desconto){
     }
 }
 
-function desconto(precoOriginal, desconto){
+export function desconto(precoOriginal, desconto){
     const precoComDesconto = precoOriginal*(1-desconto/100);
     return "<p class='card-produto__com-desconto'>"+formatarPreco(arredondarPreco(precoComDesconto))+"</p>"
 }
 
-function parcelamento(parcelamento, precoOriginal, desconto){
+export function parcelamento(parcelamento, precoOriginal, desconto){
     const precoComDesconto = precoOriginal*(1-desconto/100);
     const parcela = arredondarPreco(precoComDesconto)/(parcelamento);
     return "<p class='card-produto__parcelas'>"+parcelamento+"x de "+formatarPreco(parcela)+"</p>"
 
 }
 
-function inserirProduto(classe, objeto){
+export function inserirProduto(classe, objeto){
     cardProdutoGrid.forEach((card) => {
         if(card.classList.contains(classe)){
             card.innerHTML += `
@@ -109,7 +106,13 @@ function inserirProduto(classe, objeto){
     })
 }
 
-produtos.then(dados => {
+export async function produtos(){
+    const response = await fetch('./backend/produtos.json');
+    return await response.json() //retorna a lista "produto" do .json
+} 
+
+export async function distribuiProdutos(){
+    const dados = await produtos()
     const listKeys = Object.keys(dados.produtos[0]) //todos os objetos do.json tem as chaves iguais
 
     function categorias(){
@@ -133,6 +136,6 @@ produtos.then(dados => {
             inserirProduto(categoria, produto)
         })
     })
-
-})
+    
+}
 

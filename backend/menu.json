@@ -1,0 +1,679 @@
+{
+    "menu": [
+        {
+            "titulo": "Lançamentos",
+            "id": "lancamentos",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Sinfonía Primavera Dourada",
+                    "items": [
+                        {
+                            "imagem": "./imagens/banners/lunch1.png",
+                            "imagem_descricao": "banner vertical do Sinfonía Primavera Dourada",
+                            "link_item": "#"
+                        }
+                    ]   
+                },
+                {
+                    "titulo_coluna": "Gentlemen's Elixir Invuctus Noir",
+                    "items": [
+                        {
+                            "imagem": "./imagens/banners/lunch3.png",
+                            "imagem_descricao": "banner vertical do Invuctus Noir",
+                            "link_item": "#"
+                        }
+                    ] 
+                },
+                {
+                    "titulo_coluna": "Sunglow SUPREME",
+                    "items": [
+                        {
+                            "imagem": "./imagens/banners/lunch2.png",
+                            "imagem_descricao": "banner vertical do Sunglow SUPREME",
+                            "link_item": "#"
+                        }
+                    ]
+                }     
+            ]
+        },
+        {
+            "titulo": "Promoções",
+            "id": "promocoes",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Gerais",
+                    "items": [
+                        {
+                            "nome": "Outlet",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cupons de desconto",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Primeira compra",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Frete grátis",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Amostras",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Termos e condições",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Especiais",
+                    "items": [
+                        {
+                            "nome": "Novidades em promo",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Ofertas relâmpago",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Recomendados para você",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "<i class='italic'>HHColabs</i>",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Kits",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Marcas",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Por categoria",
+                    "items": [
+                        {
+                            "nome": "Skincare",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Maquiagem",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cabelos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Corpo e banho",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Perfumaria",
+                            "link_item": "#"
+                        }
+                    ] 
+                }       
+            ]
+        },
+        {
+            "titulo": "Perfumaria",
+            "id": "perfumaria",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Colônias",
+                    "items": [
+                        {
+                            "nome": "Infantil",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Masculino",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Feminino",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Unissex",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Casa",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Kits",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Aromas",
+                    "items": [
+                        {
+                            "nome": "Frutíferos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cítricos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Doces",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Natureza",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Floral",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Amadeirado",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Estações",
+                    "items": [
+                        {
+                            "nome": "Primavera",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Verão",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Outono",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Inverno",
+                            "link_item": "#"
+                        }
+                    ]
+                }       
+            ]
+        },
+        {
+            "titulo": "Corpo e Banho",
+            "id": "corpo-e-banho",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Banho",
+                    "items": [
+                        {
+                            "nome": "Sabonetes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Esfoliantes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Infantil",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Íntimo",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Desodorante",
+                    "items": [
+                        {
+                            "nome": "Aerosol",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cremes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Roll-on",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Masculino",
+                    "items": [
+                        {
+                            "nome": "Cuidados com a barba",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Pós-barba",
+                            "link_item": "#"
+                        }
+                    ]
+                }       
+            ]
+        },
+        {
+            "titulo": "Make",
+            "id": "make",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Boca",
+                    "items": [
+                        {
+                            "nome": "Batom",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Delineadores",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Gloss",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Rosto",
+                    "items": [
+                        {
+                            "nome": "Bases",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Blush",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Iluminador",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Pó facial",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Olhos",
+                    "items": [
+                        {
+                            "nome": "Delineadores",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Máscara para cílios",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sombra",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Maquiagem",
+                    "items": [
+                        {
+                            "nome": "Acessórios para maquiagem",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sobramcelhas",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Paletas de maquiagem",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Unhas",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Kits",
+                            "link_item": "#"
+                        }
+                    ]
+                }         
+            ]
+        },
+        {
+            "titulo": "Cabelos",
+            "id": "cabelos",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Produtos",
+                    "items": [
+                        {
+                            "nome": "Shampoo",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Condicionadores",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Máscaras",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Finalizadores",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cremes",
+                            "link_item": "#"
+                        }
+                    ] 
+                },
+                {
+                    "titulo_coluna": "Tipo de cabelo",
+                    "items": [
+                        {
+                            "nome": "Lisos (curvaturas 1A e 1B)",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Liso ondulado (curvaturas 1C e 2A)",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Ondulados (curvaturas 2B e 2C)",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cacheados (curvaturas 3A a 3C)",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Crespo (curvaturas 4A a 4C)",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Danosos",
+                    "items": [
+                        {
+                            "nome": "Pontas duplas",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Com química",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Ressecados",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Frizz",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sem brilho",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Cor",
+                    "items": [
+                        {
+                            "nome": "Loiros",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Grisalhos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Pretos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Castanhos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Mechas/Luzes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Outras",
+                            "link_item": "#"
+                        }
+                    ]
+                }         
+            ]
+        },
+        {
+            "titulo": "Skin Care",
+            "id": "skincare",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Rosto",
+                    "items": [
+                        {
+                            "nome": "Hidratantes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Ácidos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Anti-acne",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Hidratantes labiais",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Protetores solar facial",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sabonetes faciais",
+                            "link_item": "#"
+                        }
+                    ] 
+                },
+                {
+                    "titulo_coluna": "Corpo",
+                    "items": [
+                        {
+                            "nome": "Protetores solar corporal",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Mãos e pés",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Antitranspirantes",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Óleos Corporais",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Tipos de pele",
+                    "items": [
+                        {
+                            "nome": "Oleosa",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Ressecada",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sensível",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Mista",
+                            "link_item": "#"
+                        }
+                    ]
+                }      
+            ]
+        },
+        {
+            "titulo": "Infantil",
+            "id": "infantil",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Produtos",
+                    "items": [
+                        {
+                            "nome": "Fragrâncias",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Corpo e banho",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cabelos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Conjuntos",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Presentes",
+                            "link_item": "#"
+                        }
+                    ] 
+                }    
+            ]
+        },
+        {
+            "titulo": "Marcas",
+            "id": "marcas",
+            "link": "#",
+            "colunas": [
+                {
+                    "titulo_coluna": "Perfumaria",
+                    "items": [
+                        {
+                            "nome": "Belle Perle",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sinfonía",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Tiny Tots",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Gentleman's Elixir",
+                            "link_item": "#"
+                        }
+                    ] 
+                },
+                {
+                    "titulo_coluna": "Skin Care",
+                    "items": [
+                        {
+                            "nome": "Silk Skin",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sweet Sprouts",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sunglow",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Corpo e Banho",
+                    "items": [
+                        {
+                            "nome": "Whispers",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Aqua Aura",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Cecilia",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Maquiagem",
+                    "items": [
+                        {
+                            "nome": "Aquarella",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Canvas Couture",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Divino",
+                            "link_item": "#"
+                        }
+                    ]
+                },
+                {
+                    "titulo_coluna": "Cabelos",
+                    "items": [
+                        {
+                            "nome": "Harmonicleans",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Sudsy Fountain",
+                            "link_item": "#"
+                        },
+                        {
+                            "nome": "Vigor Blend",
+                            "link_item": "#"
+                        }
+                    ]
+                }       
+            ]
+        }
+    ]
+}
