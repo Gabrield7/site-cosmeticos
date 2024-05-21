@@ -15,8 +15,12 @@
 }
 
 #lancamentos-desktop{
-    margin-left: 1rem;
-    
+    margin-left: 3rem; 
+}
+
+#marcas-desktop{
+    justify-content: flex-end;
+    margin-right: 3rem;
 }
 
 /* #promocoes{
@@ -29,11 +33,6 @@
 
 #corpo-e-banho-desktop, #make-desktop, #cabelos-desktop, #skincare-desktop, #infantil-desktop{
     justify-content: center;
-}
-
-#marcas-desktop{
-    justify-content: flex-end;
-    margin-right: 3rem;
 }
 
 .item__link__desktop{

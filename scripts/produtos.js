@@ -86,7 +86,7 @@ export function inserirProduto(classe, objeto){
             <div class='card-produto'>
                 <div class='card-produto__container__imagem'>
                     <img src=${objeto.caminho} alt=${objeto.descricao} class='card-produto__imagem'>
-                    <img src='./imagens/icones/Fav-full-verde.svg' alt='Coração' class='card-produto__fav'>
+                    <img src='./imagens/icones/fav-verde.svg' alt='Coração' class='card-produto__fav'>
                     ${etiquetaDesconto(objeto.desconto)}
                 </div>
                 <h2 class='card-produto__descricao'>${objeto.descricao}</h2>

@@ -4,12 +4,12 @@
 
 .produtos__titulo__texto{
     font-family: var(--fonte-menu);
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700; 
     text-align: center;
     padding: 2rem 2rem 0;
     color: var(--cor-verde-escuro);
-    text-shadow: 2px 2px 4px var(--cor-verde-claro);
+    /* text-shadow: 2px 2px 4px var(--cor-verde-claro); */
 }
 
 .produtos__titulo__texto::after{
@@ -23,18 +23,18 @@
 
 .produtos__container__grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 220px);
     justify-content: center;
     align-items: center;
     /* grid-template-columns: repeat(auto-fit, 300px); */
     width: auto;
     margin: 2rem;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 @media screen and (max-width: 1028px){
     .produtos__titulo__texto{
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .produtos__container__grid{

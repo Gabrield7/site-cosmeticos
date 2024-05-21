@@ -1,6 +1,10 @@
-import {intervalo} from "./carrossel.js"
-import {distribuiProdutos} from "./produtos.js"
-import {insereSecao} from "./menu.js"
+import {intervalo} from "./carrossel.js";
+import {distribuiProdutos} from "./produtos.js";
+import {insereHeader} from "./header.js";
+import {insereSecao} from "./menu.js";
+
+//HEADER
+insereHeader();
 
 //MENU DESKTOP
 insereSecao('desktop');
@@ -11,8 +15,8 @@ intervalo();
 //PRODUTOS
 distribuiProdutos();
 
-// const darkModeButton = document.getElementById('modo')
-// const body = document.querySelector('body')
+const darkModeButton = document.getElementById('modo')
+const body = document.querySelector('body')
 
 // darkModeButton.addEventListener('click', () => {
 //     const currentImage = darkModeButton.style.backgroundImage;
@@ -23,9 +27,9 @@ distribuiProdutos();
 //     }
 // });
 
-// darkModeButton.addEventListener('click', () => {
-//     darkModeButton.classList.toggle('dark')
-//     body.classList.toggle('dark')
-// });
+darkModeButton.addEventListener('click', () => {
+    darkModeButton.classList.toggle('dark')
+    body.classList.toggle('dark')
+});
 
 

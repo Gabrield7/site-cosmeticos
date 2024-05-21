@@ -1,5 +1,5 @@
 const menuPrincipalDesktop = document.querySelector('.menu-principal__lista__desktop'); //div (ul) para inserir item
-const menuPrincipalMobile = document.querySelector('.menu-principal__lista__mobile')
+const menuPrincipalMobile = document.querySelector('.menu-principal__lista__mobile');
 const body = document.querySelector('body');
 
 export async function secoes(){
@@ -25,13 +25,13 @@ export function admFundo(elemento, tela){
         fundo = document.querySelector('.fundo__mobile')
         
         if(fundo.classList.contains('hidden')){
-            closeMobileButton.classList.remove('hidden');
+            elemento.classList.remove('hidden');
             fundo.classList.remove('hidden');
-            body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
         }else{
-            closeMobileButton.classList.add('hidden');
+            elemento.classList.add('hidden');
             fundo.classList.add('hidden');
-            body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto';
         }
     }
 
@@ -132,41 +132,43 @@ export async function insereSecao(tela){
 
 }
 
-const closeMobileButton = document.querySelector('.menu-hamburguer__close')
-const iconeHamburguer = document.querySelector('.cabecalho__menu-hamburguer')
-const menuMobile = document.querySelector('.menu-principal__mobile')
-
-const teste = document.getElementById('favoritos')
-
-//carregar conteúdo do menu apenas quando o for aberto
-let secaoInserida = false; 
-iconeHamburguer.addEventListener('click', async ()=>{
-    if(!secaoInserida){
-        await insereSecao('mobile');
-        secaoInserida = true
-    }else{
-        return
-    }
+export function menuHamburguer(){
     
-})
+    const iconeHamburguer = document.querySelector('.cabecalho__menu-hamburguer');
+    const menuMobile = document.querySelector('.menu-principal__mobile');
+    const closeMobileButton = document.querySelector('.menu-hamburguer__close');
+    //console.log(iconeHamburguer);
 
-//abrir menu hambúrguer
-iconeHamburguer.onclick = () => {
-    menuMobile.style.transform = 'translate(270px, 0)';
-    admFundo('','mobile');
-}
-//fechar menu hambúrguer
-closeMobileButton.onclick = () => {
-    menuMobile.style.transform = 'translate(-270px, 0)';
-    admFundo('','mobile');
-}
+    //carregar conteúdo do menu apenas quando o for aberto
+    let secaoInserida = false; 
+    iconeHamburguer.addEventListener('click', async ()=>{
+        if(!secaoInserida){
+            await insereSecao('mobile');
+            secaoInserida = true
+        }else{
+            return
+        }
+    })
 
-//Para impedir que o menu fique aberto quando a tela mudar de tamanho
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 800) {
+    //abrir menu hambúrguer
+    iconeHamburguer.addEventListener('click', () => {
+        menuMobile.style.transform = 'translate(270px, 0)';
+        admFundo(closeMobileButton,'mobile');
+    });
+    //fechar menu hambúrguer
+    closeMobileButton.addEventListener('click', () => {
         menuMobile.style.transform = 'translate(-270px, 0)';
-        document.querySelector('.fundo__mobile').classList.add('hidden');
-        body.style.overflow = 'auto';
-    }
-});
+        admFundo(closeMobileButton,'mobile');
+    });
+
+    //Para impedir que o menu fique aberto quando a tela mudar de tamanho
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 800) {
+            menuMobile.style.transform = 'translate(-270px, 0)';
+            document.querySelector('.fundo__mobile').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
 

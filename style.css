@@ -12,10 +12,10 @@
 
 :root {
     --logo-completa: url(../imagens/icones/logo_completa-verde.svg);
-    --cor-verde-claro: #1FCEA2;
+    --cor-verde-claro: #47dea8;
     --cor-verde-escuro: #275756;
     --cor-branca: #fffafa;
-    --cor-preta: #000000;
+    --cor-preta: #2D3333;
     --cor-cinza: #888888;
 
     --fonte-menu: "Sedan", serif;
@@ -24,14 +24,14 @@
 
 body{
     min-height: 100vh;
-    min-width: 390px;
-    background-color: var(--cor-branco);
+    min-width: 350px;
+    background-color: var(--cor-branca);
     overflow: auto;
     overflow-x: hidden;
 }
 
 body.dark{
-    background-color: var(--cor-verde-escuro);
+    background-color: var(--cor-preta);
 }
 
 .hidden{

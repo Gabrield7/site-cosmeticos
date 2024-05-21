@@ -1,32 +1,49 @@
 .card-produto{
     display: grid;
     /* grid-template-rows: reapeat(auto-fit, minmax(260px, 50px)); */
-    gap: 5px;
+    /* gap: 5px; */
     margin: auto;
-    height: 650px;
-    width: 300px;
+    /* height: 650px; */
+    /* width: 300px; */
     background-color: var(--cor-branca);
     border-radius: 15px;
     border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+
+    gap: 3px;
+    height: 500px;
+    width: 220px;
 }
 
 .card-produto__container__imagem{
     display: flex;
     position: relative;
-    margin: 20px;
+    /* margin: 20px; */
+
+
+    margin: 10px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .card-produto__imagem{
-    max-width: 260px;
-    max-height: 260px;
+    /* max-width: 260px;
+    max-height: 260px; */
     width: auto;
     height: auto;
+
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .card-produto__fav{
     position: absolute;
     cursor: pointer;
+
+    max-width: 30px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
 }
 
 .card-produto__desconto{
@@ -36,32 +53,47 @@
     font-family: var(--fonte-texto);
     background-color: var(--cor-verde-escuro);
     color: var(--cor-branca);
-    font-size: 24px;
-    font-weight: 600;
+    /* font-size: 24px; */
+    /* font-weight: 600; */
     border-radius: 5px;
     padding: 5px 10px;
     text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .card-produto__descricao{
     font-family: var(--fonte-texto);
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 600;
-    margin: 0 20px;
+    color: var(--cor-preta);
+    /* margin: 0 20px; */
+
+    font-size: 16px;
+    margin: 0 10px;
 }
 
 .card-produto__com-desconto{
     font-family: var(--fonte-texto);
-    font-size: 32px;
+    /* font-size: 32px; */
     font-weight: 800;
-    margin: 0 20px;
+    color: var(--cor-preta);
+    /* margin: 0 20px; */
+
+    font-size: 24px;
+    margin: 0 10px;
 }
 
 .card-produto__preco-original, .card-produto__parcelas{
     font-family: var(--fonte-texto);
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 600;
-    margin: 0 20px;
+    color: var(--cor-preta);
+    /* margin: 0 20px; */
+
+    font-size: 16px;
+    margin: 0 10px;
 }
 /* div para substituir o espço do preço originalq aundo o desconto for zero */
 .div-substituicao-preco-desconto-zero{
@@ -74,26 +106,32 @@
     display: flex;
     position: relative;
     justify-content: flex-start;
-    gap: 5px;
-    margin: 0px 20px;
+    /* gap: 5px; */
+    margin: 0px 10px;
     align-items: center;
+
+    gap: 5px;
 }
 
 .avaliacao__quantidade{
     display: none;
-    background-color: var(--cor-cinza);
+    background-color: var(--cor-preta);
     color: var(--cor-branca);
     position: absolute;
-    top: 110%;
-    left: 60%;
+    /* top: 110%; */
+    /* left: 60%; */
     width: auto;
     font-family: var(--fonte-texto);
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 500;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--cor-preta);
     white-space: nowrap; /*Para impedir a quebra do texto*/
+
+    top: 10%;
+    font-size: 10px;
+    left: 80%;
 }
 
 .card-produto__avaliacao:hover>.avaliacao__quantidade{
@@ -101,10 +139,13 @@
 }
 
 .avaliacao__estrela__imagem{
-    max-width: 25px;
-    max-height: 25px;
+    /* max-width: 25px;
+    max-height: 25px; */
     width: auto;
     height: auto;
+
+    max-width: 15px;
+    max-height: 15px;
 }
 
 .card-produto__preco-original{
@@ -115,14 +156,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 230px;
-    height: 50px;
-    margin: 20px;
-    padding: 10px 15px;
+    /* width: 230px; */
+    /* height: 50px; */
+    /* margin: 20px; */
+    /* padding: 10px 15px; */
     background-color: var(--cor-verde-escuro);
     border-radius: 5px;
     text-decoration: none;
     transition: .5s;
+
+    width: 170px;
+    height: 45px;
+    margin: 10px;
+    padding: 5px 15px;
 }
 
 .card-produto__botao-add-sacola:hover{
@@ -133,18 +179,23 @@
     text-align: center;
     font-family: var(--fonte-texto);
     color: var(--cor-branca);
-    font-size: 28px;
+    /* font-size: 28px; */
     font-weight: 600;
+
+    font-size: 20px;
 }
 
 .botao-add-sacola__imagem{
-    max-width: 35px;
-    max-height: 35px;
+    /* max-width: 35px;
+    max-height: 35px; */
     width: auto;
     height: auto;
+
+    max-width: 30px;
+    max-height: 30px;
 }
 
-@media screen and (max-width: 1028px) {
+/* @media screen and (max-width: 1028px) {
     .card-produto{
         gap: 3px;
         height: 500px;
@@ -152,8 +203,6 @@
     }
     
     .card-produto__container__imagem{
-        display: flex;
-        position: relative;
         margin: 10px;
         max-width: 200px;
         max-height: 200px;
@@ -193,16 +242,12 @@
     }
 
     .card-produto__com-desconto{
-        font-family: var(--fonte-texto);
         font-size: 24px;
-        font-weight: 800;
         margin: 0 10px;
     }
     
     .card-produto__preco-original, .card-produto__parcelas{
-        font-family: var(--fonte-texto);
         font-size: 16px;
-        font-weight: 600;
         margin: 0 10px;
     }
 
@@ -219,7 +264,7 @@
         max-width: 30px;
         max-height: 30px;
     }
-}
+} */
 
 @media screen and (max-width: 700px) {
     .card-produto{
@@ -256,9 +301,6 @@
     .avaliacao__estrela__imagem{
         max-width: 15px;
         max-height: 15px;
-    }
-    .card-produto__avaliacao{
-        gap: 5px;
     }
     .avaliacao__quantidade{
         top: 10%;
