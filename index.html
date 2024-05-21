@@ -27,8 +27,8 @@
         </div>
             
     </aside>
-
     <div class="fundo__mobile hidden"></div>
+    
     <!-- HEADER -->
     <header id="header"></header>
 
@@ -180,23 +180,28 @@
 
         <!-- SESSÃO DE CADASTRO DE USUÁRIO -->
         <section class="formulario">
-            <div class="formulario__conatainer-grid">
-                <h2 class="formulario__titulo">Faça parte dos primeiros a desvendar nossas próximas surpresas</h2>
-                <form class="formulario__nome" autocomplete="off">
-                    <input type="search" class="formulario__campo" placeholder="Nome">
-                </form>
-                <form class="formulario__email">
-                    <input type="search" class="formulario__campo" placeholder="E-mail">
-                </form>
-                <form class="formulario__Celular">
-                    <input type="search" class="formulario__campo" placeholder="Celular">
-                </form>
+            <h2 class="formulario__titulo">Faça parte dos primeiros a desvendar nossas próximas surpresas</h2>
+            <form class="formulario__container-grid">
+                <fieldset class="formulario__campo">
+                    <label class="formulario__campo__label" for="news-name">Nome</label>
+                    <input id="news-name" type="text" class="formulario__campo__input" placeholder="Digite seu nome">
+                    <span class="mensagem-erro">Mensagem de erro</span>
+                </fieldset>
+                <fieldset class="formulario__campo">
+                    <label class="formulario__campo__label" for="news-email">E-mail</label>
+                    <input id="news-email" type="text" class="formulario__campo__input" placeholder="Digite seu e-mail">
+                    <span class="mensagem-erro"></span>
+                </fieldset>
+                <fieldset class="formulario__campo">
+                    <label class="formulario__campo__label" for="news-celular">Celular(DDD + Telefone)</label>
+                    <input id="news-celular" type="text" class="formulario__campo__input" placeholder="Celular(com DDD)">
+                    <span class="mensagem-erro"></span>
+                </fieldset>
                 <a href="#" class="formularo__botao__link">
-                    <button class="formulario__botao">Cadastrar</button>
+                    <input value="Cadastrar" class="formulario__botao" id="cadastrar" type="submit">
                 </a>
-                </button>
-                <p class="formulario__observacao">Ao se cadastrar, você concorda em receber comunicações nos termos da nossa <a href="#" class="formulario__texto-privacidade">Política de Privacidade</a>.</p>
-            </div>
+            </form>
+            <p class="formulario__observacao">Ao se cadastrar, você concorda em receber comunicações nos termos da nossa <a href="#" class="formulario__texto-privacidade">Política de Privacidade</a>.</p>
         </section>
 
     </main>

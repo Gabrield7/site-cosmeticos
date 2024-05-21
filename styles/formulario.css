@@ -1,48 +1,74 @@
-.formulario__conatainer-grid{
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 3rem;
+}
+.formulario__container-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15vw, 25vw));
-    text-align: center;
-    max-width: 1300px;
-    margin: auto;
-    row-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center stretch;
+    gap: 2rem;
 }
 
 .formulario__titulo{
     font-family: var(--fonte-texto);
     font-size: 32px;
-    font-weight: 500;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    margin: 2rem;
+    font-weight: 600;
+    text-align: center;
+    text-align: center;
+    grid-column: span 4;
+    margin: 2rem 0;
     color: var(--cor-verde-escuro);
 }
 
 .formulario__campo{
-    height: 50px;
-    width: 20vw;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+}
+
+.formulario__campo__label{
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-verde-escuro);
+}
+
+.formulario__campo__input{
     border: 1px solid var(--cor-verde-escuro);
     border-radius: 10px;
-    padding: 10px;
+    padding: 16px;
     color: var(--cor-verde-escuro);
     font-family: var(--fonte-texto);
-    font-size: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-.formulario__campo::placeholder{
+.formulario__campo__input::placeholder{
     font-family: var(--fonte-texto);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--cor-verde-escuro);
+    opacity: 50%;
 }
 
-.formulario__campo:focus{
+.formulario__campo__input:focus{
     outline-color: var(--cor-verde-escuro);
 }
 
-.formulario__campo:focus::-webkit-input-placeholder{ 
+.formulario__campo__input:focus::-webkit-input-placeholder{ 
     color: transparent;
 }
 
+.mensagem-erro{
+    height: 16px;
+    font-size: 16px;
+    font-family: var(--fonte-texto);
+    color: var(--cor-error);
+}
 /* Para remover o botão de limpeza do campo */
 input[type="text"]::-ms-clear,
 input[type="text"]::-ms-reveal,
@@ -55,11 +81,10 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .formulario__botao{
     background-color: var(--cor-verde-escuro);
-    width: 200px;
-    height: 50px;
+    padding: 16px;
+    width: 100%;
     border: none;
     border-radius: 10px;
-    margin: auto;
     border: none;
     font-family: var(--fonte-texto);
     font-size: 20px;
@@ -74,12 +99,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .formulario__observacao{
-    grid-row-end: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 5;
     text-align: justify;
-    margin: 1rem;
+    margin: 1rem 0;
     font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 400;
@@ -87,50 +108,64 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .formulario__texto-privacidade{
-    color: var(--cor-preto);
-    
+    color: var(--cor-verde-escuro);
 }
 
 @media screen and (max-width: 1028px) {
-    .formulario__conatainer-grid{
-        max-width: 700px;
-        gap: 5vw;
+    .formulario{
+        margin: 0 5rem;
     }
-    
-    .formulario__campo{
-        font-size: 16px;
-        width: 18vw;
+    .formulario__container-grid{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(auto-fit, auto);
+        gap: 1rem;
     }
 
-    .formulario__botao{
-        width: 130px;
-        font-size: 16px;
+    .formulario__campo__label{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .formulario__campo__input{
+        font-size: 20px;
+    }
+    .formulario__campo__input::placeholder{
+        font-size: 20px;
+    }
+
+    .formulario__observacao{
+        margin: 2rem 0;
     }
 }
 
 @media screen and (max-width: 800px){
-    .formulario__conatainer-grid{
+    .formulario{
+        margin: 0 3rem;
+    }
+    .formulario__container-grid{
         grid-template-columns: auto;
         grid-template-rows: repeat(auto-fit, auto);
+        gap: 1rem;
     }
-    .formulario__campo{
-        font-size: 16px;
-        width: 70vw;
+    .formulario__titulo{
+        font-size: 28px;
     }
-    .formulario__botao{
-        width: 70vw;
-        font-size: 16px;
+}
+
+@media screen and (max-width: 500px){
+    .formulario{
+        margin: 0 2rem;
+    }
+    .formulario__titulo{
+        font-size: 20px;
     }
 
-    .formulario__titulo{
-        grid-column-start: 1;
-        grid-column-end: 2;
+    .formulario__campo__label{
+        font-size: 16px;
     }
-    .formulario__observacao{
-        grid-row-end: 6;
-        grid-row-end: 7;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        margin: 2rem;
+    .formulario__campo__input{
+        font-size: 16px;
+    }
+    .formulario__campo__input::placeholder{
+        font-size: 16px;
     }
 }

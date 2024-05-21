@@ -18,9 +18,6 @@
 .card-produto__container__imagem{
     display: flex;
     position: relative;
-    /* margin: 20px; */
-
-
     margin: 10px;
     max-width: 200px;
     max-height: 200px;
@@ -156,19 +153,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 230px; */
-    /* height: 50px; */
-    /* margin: 20px; */
-    /* padding: 10px 15px; */
     background-color: var(--cor-verde-escuro);
     border-radius: 5px;
     text-decoration: none;
     transition: .5s;
-
-    width: 170px;
-    height: 45px;
+    width: auto;
+    height: 40px;
     margin: 10px;
-    padding: 5px 15px;
+    padding: 8px 20px;
 }
 
 .card-produto__botao-add-sacola:hover{
@@ -181,7 +173,6 @@
     color: var(--cor-branca);
     /* font-size: 28px; */
     font-weight: 600;
-
     font-size: 20px;
 }
 
@@ -191,8 +182,8 @@
     width: auto;
     height: auto;
 
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 24px;
+    max-height: 24px;
 }
 
 /* @media screen and (max-width: 1028px) {
@@ -319,15 +310,14 @@
     }
 
     .card-produto__botao-add-sacola{
-        width: 110px;
-        height: 35px;
-        padding: 5px 10px;
+        height: 32px;
+        padding: 4px 16px;
     }
     .botao-add-sacola__texto{
-        font-size: 14px;
+        font-size: 12px;
     }
     .botao-add-sacola__imagem{
-        max-width: 20px;
-        max-height: 20px;
+        max-width: 16px;
+        max-height: 16px;
     }
 }
