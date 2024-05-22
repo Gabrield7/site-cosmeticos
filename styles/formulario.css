@@ -18,7 +18,7 @@
     text-align: center;
     text-align: center;
     grid-column: span 4;
-    margin: 2rem 0;
+    margin: 3rem 0 4rem;
     color: var(--cor-verde-escuro);
 }
 
@@ -91,10 +91,12 @@ input[type="search"]::-webkit-search-results-decoration {
     font-weight: 600;
     text-decoration: none;
     color: var(--cor-branca);
+    transition: .5s;
 }
 
 .formulario__botao:hover{
-    border: 1px solid var(--cor-verde-claro);
+    background-color: var(--cor-verde-claro);
+    color: var(--cor-verde-escuro);
     cursor: pointer;
 }
 
@@ -119,6 +121,11 @@ input[type="search"]::-webkit-search-results-decoration {
         grid-template-columns: auto;
         grid-template-rows: repeat(auto-fit, auto);
         gap: 1rem;
+    }
+
+    .formulario__titulo{
+        font-size: 28px;
+        margin: 3rem 0;
     }
 
     .formulario__campo__label{

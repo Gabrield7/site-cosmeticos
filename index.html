@@ -14,11 +14,11 @@
     <!-- MENU PRINCIPAL - MOBILE -->
     <aside class="menu-principal__mobile">
         
-        <div class="menu-hamburguer__usuario__container">
-            <a href="#" class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></a>
-            <div class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</div>
+        <a href="#" class="menu-hamburguer__usuario__container">
+            <div class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></div>
+            <p class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</p>
             <button type='button' class="menu-hamburguer__close hidden"></button>
-        </div>
+        </a>
         
         <div class="menu__scroller">
             <ul class="menu-principal__lista__mobile">
@@ -184,17 +184,17 @@
             <form class="formulario__container-grid">
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="news-name">Nome</label>
-                    <input id="news-name" type="text" class="formulario__campo__input" placeholder="Digite seu nome">
+                    <input id="news-name" type="text" class="formulario__campo__input" placeholder="Digite seu nome" required>
                     <span class="mensagem-erro">Mensagem de erro</span>
                 </fieldset>
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="news-email">E-mail</label>
-                    <input id="news-email" type="text" class="formulario__campo__input" placeholder="Digite seu e-mail">
+                    <input id="news-email" type="text" class="formulario__campo__input" placeholder="Digite seu e-mail" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="news-celular">Celular(DDD + Telefone)</label>
-                    <input id="news-celular" type="text" class="formulario__campo__input" placeholder="Celular(com DDD)">
+                    <input id="news-celular" type="text" class="formulario__campo__input" placeholder="Celular(com DDD)" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <a href="#" class="formularo__botao__link">

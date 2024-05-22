@@ -38,7 +38,6 @@ export function admFundo(elemento, tela){
 }
 
 export async function insereItem(coluna, tela){
-    //const dadosSecoes = await secoes()
     let items = ''
 
     coluna.items.forEach((item)=>{
@@ -63,7 +62,6 @@ export async function insereItem(coluna, tela){
 }
 
 export async function insereColuna(secao, tela){
-
     let listaColuna = '';
     
     for (const coluna of secao.colunas) {  
@@ -71,7 +69,7 @@ export async function insereColuna(secao, tela){
 
         listaColuna += `
         <ul class='secao__lista__${tela}'>
-        <il class='secao__lista__titulo__${tela}'>${coluna.titulo_coluna}</il>
+            <il class='secao__lista__titulo__${tela}'>${coluna.titulo_coluna}</il>
             ${dadosItems}
         </ul>
         `
@@ -79,6 +77,8 @@ export async function insereColuna(secao, tela){
 
     return listaColuna
 }
+
+
 
 export async function insereSecao(tela){
     const dadosSecoes = await secoes()
@@ -92,8 +92,22 @@ export async function insereSecao(tela){
         listSecoes.classList.add(listaItems);
         listSecoes.setAttribute('id', `${secao.id}-${tela}`)
 
+        let title = '';
+        if(tela == 'mobile'){
+            title =
+            `<button href='${secao.link}' class='item__link__${tela}'>
+                <h2>${secao.titulo}</h2>
+                <div class='item__link__seta'>
+                    <span class='seta-1'></span>
+                    <span class='seta-2'></span>
+                </div>
+            </button>`;
+        }else{
+            title = `<a href='${secao.link}' class='item__link__${tela}'>${secao.titulo}</a>`
+        }
+
         listSecoes.innerHTML += `
-        <a href='${secao.link}' class='item__link__${tela}'>${secao.titulo}</a>
+        ${title}
         <div class='item__secao__${tela}'>
             ${dadosColunas}
         </div>
@@ -119,14 +133,37 @@ export async function insereSecao(tela){
         })
 
     }else{
-        document.querySelectorAll(itemSecao).forEach((secao)=>{
-            secao.classList.add('hidden'); //adiciona a classe hidden a todos os elementos 'secao'
-        })
-        
         document.querySelectorAll(itemLinkTopico).forEach((link)=>{
-            link.addEventListener('click', () => {
-                link.childNodes[3].classList.toggle('hidden') //acessa a nodeList que contém as seções a serem exibidas
+            const secao = link.childNodes[3];
+            const itemLinkMobile = secao.parentNode.querySelectorAll('.item__link__mobile');
+
+            itemLinkMobile.forEach((item)=>{
+                //seleciona o elemento 'secao', referente a '.item__secao__mobile' que contém as seções
+                const section = Array.from(item.parentNode.querySelectorAll('.item__secao__mobile'))[0];
+                section.classList.add('hidden');
+
+                const setas = item.querySelector('.item__link__seta');
+                const seta1 = setas.querySelector('.seta-1');
+                const seta2 = setas.querySelector('.seta-2');
+                seta1.style.transform = 'translateX(2px) rotate(45deg)';
+                seta2.style.transform = 'translateX(-2px) rotate(-45deg)';
+
+                let selected = false;
+                item.addEventListener('click', ()=>{
+                    if(selected){
+                        section.classList.add('hidden');
+                        seta1.style.transform = 'translateX(2px) rotate(45deg)';
+                        seta2.style.transform = 'translateX(-2px) rotate(-45deg)';
+                        selected = false;  
+                    }else{
+                        section.classList.remove('hidden');
+                        seta1.style.transform = 'translateX(-2px) rotate(45deg)';
+                        seta2.style.transform = 'translateX(2px) rotate(-45deg)';
+                        selected = true;
+                    } 
+                })
             })
+            
         })
     }
 
@@ -155,11 +192,18 @@ export function menuHamburguer(){
         menuMobile.style.transform = 'translate(270px, 0)';
         admFundo(closeMobileButton,'mobile');
     });
+
     //fechar menu hambúrguer
     closeMobileButton.addEventListener('click', () => {
         menuMobile.style.transform = 'translate(-270px, 0)';
         admFundo(closeMobileButton,'mobile');
     });
+    document.querySelector('.fundo__mobile').addEventListener('click', ()=>{
+        //fechar o menu também quando clicar fora dele
+        menuMobile.style.transform = 'translate(-270px, 0)';
+        admFundo(closeMobileButton,'mobile');
+    })
+
 
     //Para impedir que o menu fique aberto quando a tela mudar de tamanho
     window.addEventListener('resize', () => {

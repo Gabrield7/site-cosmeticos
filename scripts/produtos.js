@@ -86,7 +86,7 @@ export function inserirProduto(classe, objeto){
             <div class='card-produto'>
                 <div class='card-produto__container__imagem'>
                     <img src=${objeto.caminho} alt=${objeto.descricao} class='card-produto__imagem'>
-                    <img src='./imagens/icones/fav-verde.svg' alt='Coração' class='card-produto__fav'>
+                    <button type='button' alt='Favoritar' class='card-produto__fav'></button>
                     ${etiquetaDesconto(objeto.desconto)}
                 </div>
                 <h2 class='card-produto__descricao'>${objeto.descricao}</h2>
@@ -97,14 +97,16 @@ export function inserirProduto(classe, objeto){
                 ${precoOriginal(objeto.preco, objeto.desconto)}
                 ${desconto(objeto.preco, objeto.desconto)}           
                 ${parcelamento(objeto.parcelamento, objeto.preco, objeto.desconto)}
-                <a href='#' class='card-produto__botao-add-sacola'>
+                <button type='button' class='card-produto__botao-add-sacola'>
                     <p class='botao-add-sacola__texto'>ADICIONAR</p>
-                    <img src='./imagens/icones/compras-branco.svg' alt='ícone de sacola de compras' class='botao-add-sacola__imagem'>
-                </a>
+                    <div alt='ícone de sacola de compras' class='botao-add-sacola__imagem'></div>
+                </button>
             </div>`
         } 
     })
 }
+
+//<p class='botao-add-sacola__texto'>ADICIONAR</p>
 
 export async function produtos(){
     const response = await fetch('./backend/produtos.json');

@@ -132,19 +132,18 @@ input[type="search"]::-webkit-search-results-decoration {
 #modo{
     background-image: url('../imagens/icones/dark-mode-verde.svg');
 }
-
 #modo.dark{
     background-image: url('../imagens/icones/light-mode-branco.svg');
 }
 
 #usuario{
-    background-image: url('../imagens/icones/user-verde.svg')
+    background-image: url('../imagens/icones/user-verde.svg');
 }
 #favoritos{
-    background-image: url('../imagens/icones/fav-verde.svg')
+    background-image: url('../imagens/icones/fav-verde.svg');
 }
 #sacola{
-    background-image: url('../imagens/icones/compras-verde.svg')
+    background-image: url('../imagens/icones/compras-verde.svg');
 }
 
 

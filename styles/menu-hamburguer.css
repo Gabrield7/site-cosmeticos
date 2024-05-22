@@ -16,24 +16,27 @@
     }
     
     .menu-hamburguer__usuario__container{
-        background-color: var(--cor-branca);
-        position: relative;
         display: flex;
-        /* align-items: center; */
+        background-color: var(--cor-branco-gelo);
+        opacity: 1;
+        position: relative;
+        justify-content: center;
         padding: .5rem 1rem;
         width: calc(270px - 2rem);
         height: 50px;
         border-bottom: 2px solid var(--cor-verde-escuro);
+        border: none;
+        text-decoration: none;
     }
     
     #usuario-mobile{
-        background-image: url('../imagens/icones/user-verde.svg')
+        background-image: url('../imagens/icones/user-verde.svg');
     }
     
     .menu-hamburguer__usuario__texto{
         font-family: var(--fonte-texto);
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 600;
         color: var(--cor-verde-escuro);
         margin: auto 1rem;
     }
@@ -67,7 +70,7 @@
         flex-direction: column;
         height: auto;
         width: 100%;
-        margin: 1rem 1rem 1rem 1rem;
+        margin: 1rem;
         gap: 1.5rem;
     }
     
@@ -75,11 +78,10 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
-        position: relative;
         height: auto;
     }
     
-    .menu-principal__lista__item__mobile::after{
+    /* .menu-principal__lista__item__mobile::after{
         content: '';
         position: absolute;
         right: 0;
@@ -93,21 +95,21 @@
         border-style: solid;
         border-color: var(--cor-verde-escuro);
         transform: translateY(0) rotate(45deg);
-    }
+    } */
     
-    .menu-principal__lista__item__mobile::before{
+    .menu-principal__lista__item__mobile::after{
         content: '';
         display: block;
         top: 100%;
         width: 100%;
         height: 2px;
-        position: absolute;
         background-color: var(--cor-verde-escuro);
     }
     
     
     .item__link__mobile{
         display: flex;
+        justify-content: space-between;
         align-items: center;
         text-align: center;
         height: auto;
@@ -119,6 +121,26 @@
         font-size: 20px;
         margin-bottom: .5rem;
         cursor: pointer;
+
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .item__link__seta{
+        height: 8px;
+        width: 8px;
+        transition: .5s;
+        position: relative;
+    }
+
+    .seta-1, .seta-2{
+        background-color: var(--cor-verde-escuro);
+        display: block;
+        height: 8px;
+        width: 3px;
+        position: absolute;
+        transition: .5s;
     }
     
     .item__secao__mobile{
@@ -127,7 +149,6 @@
         background-color: var(--cor-branca);
         padding: 1rem;
         top: 100%;
-        /* z-index: 3; */
         gap: 1.5rem;
     }
     
