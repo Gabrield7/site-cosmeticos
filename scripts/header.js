@@ -18,7 +18,7 @@ export function insereHeader(){
                     <form class="cabecalho__pesquisa__form">
                         <input type="search" class="pesquisa__form__input" placeholder="Pesquisar">
                     </form>
-                    <button class="cabecalho__pesquisa__pesquisar">
+                    <button aria-label='Pesquisar' class="cabecalho__pesquisa__pesquisar">
                         <!-- atribuir img ao button pelo js para add modo dark (?)-->
                         <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="cabecalho__pesquisa__lupa">
                     </button>
@@ -37,7 +37,7 @@ export function insereHeader(){
             <form class="pesquisa__form__mobile">
                 <input type="search" class="form__input__mobile" placeholder="Pesquisar">
             </form>
-            <button class="pesquisa__pesquisar__mobile">
+            <button aria-label='Pesquisar' class="pesquisa__pesquisar__mobile">
                 <!-- atribuir img ao button pelo js para add modo dark (?)-->
                 <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="pesquisa__lupa__mobile">
             </button>
@@ -45,7 +45,5 @@ export function insereHeader(){
     </nav>`;
     menuHamburguer();
 }
-
-
 
 

@@ -1,5 +1,3 @@
-//SLIDER MENU
-//let rolManual = document.querySelector('.botao-manual');
 let SliderCount = 1;
 
 document.getElementById('botao1').checked = true;
@@ -56,10 +54,3 @@ controles.forEach(control =>{
         items[currentItem].classList.add('primeiro-slide');
     })
 });
-
-//SLIDER PRODUTOS
-
-const controlesProdutos = document.querySelectorAll(".control-produtos");
-let currentItemProdutos = 0;
-const itemsProdutos = document.querySelectorAll('.card-produto');
-const maxItensProdutos = itemsProdutos.length;

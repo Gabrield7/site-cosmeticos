@@ -6,32 +6,27 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
     <title>Harmony Haven</title>
     <link rel="shortcut icon" href="./imagens/icones/harmony-haven-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js" defer></script> <!--lib para permitir arrastar tela-->
 </head>
 <body>
     <!-- MENU PRINCIPAL - MOBILE -->
     <aside class="menu-principal__mobile">
-        
         <a href="#" class="menu-hamburguer__usuario__container">
             <div class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></div>
             <p class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</p>
-            <button type='button' class="menu-hamburguer__close hidden"></button>
+            <button type='button' aria-label='Botão fechar menu' class="menu-hamburguer__close hidden"></button>
         </a>
-        
         <div class="menu__scroller">
             <ul class="menu-principal__lista__mobile">
                 <!-- Seções serão inseridas aqui -->
             </ul>
-        </div>
-            
+        </div> 
     </aside>
     <div class="fundo__mobile hidden"></div>
-    
     <!-- HEADER -->
     <header id="header"></header>
-
     <main>
         <!-- MENU PRINCIPAL - DESKTOP -->
         <section class="menu-principal__desktop">
@@ -98,7 +93,7 @@
                 <button class="arrow-left control" aria-label="destaque anterior">❮</button>
                 <button class="arrow-right control" aria-label="próximo destaque">❯</button>
                 
-                <div class="galeria__destaque__wrapper dragscroll">
+                <div class="galeria__destaque__wrapper">
 
                     <div class="galeria__destaque">
                         
@@ -151,31 +146,37 @@
         <!-- PRODUTOS PERFUMARIA FEMININA -->
         <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Desperte sua essência com fragrâncias que contam sua história</h1>
-            <div class="produtos__container__grid perfumaria"></div>
+            <div class="slider__produtos" id='perfumaria'>
+                <!-- Os slides serão inseridos aqui -->
+            </div> 
         </section>
-
         <!-- PRODUTOS SKIN CARE -->
         <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Revitalize seu corpo, renove sua alma</h1>
-            <div class="produtos__container__grid skincare"></div>
+            <div class="slider__produtos" id='skincare'>
+                <!-- Os slides serão inseridos aqui -->
+            </div> 
         </section>
-
         <!-- PRODUTOS INFANTIL -->
         <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Uma aventura mágica para os pequenos</h1> 
-            <div class="produtos__container__grid infantil"></div>       
+            <div class="slider__produtos" id='infantil'>
+                <!-- Os slides serão inseridos aqui -->
+            </div>      
         </section>
-
         <!-- PRODUTOS MAQUIAGEM -->
         <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Torne-se sua própria obra-prima</h1>
-            <div class="produtos__container__grid maquiagem"></div>    
+            <div class="slider__produtos" id='maquiagem'>
+                <!-- Os slides serão inseridos aqui -->
+            </div>    
         </section>
-
         <!-- PRODUTOS MASCULINOS -->
         <section class="secao-produtos">
             <h1 class="produtos__titulo__texto">Desperte a essência do seu poder masculino</h1>
-            <div class="produtos__container__grid masculino"></div>
+            <div class="slider__produtos" id='masculino'>
+                <!-- Os slides serão inseridos aqui -->
+            </div> 
         </section>
 
         <!-- SESSÃO DE CADASTRO DE USUÁRIO -->
@@ -315,7 +316,8 @@
             </p>
         </div>
     </footer>
-    <script src="./scripts/main.js" type="module"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script src="./scripts/main.js" type="module"></script>
 
 </html>

@@ -9,7 +9,6 @@
     text-align: center;
     padding: 2rem 2rem 0;
     color: var(--cor-verde-escuro);
-    /* text-shadow: 2px 2px 4px var(--cor-verde-claro); */
 }
 
 .produtos__titulo__texto::after{
@@ -21,15 +20,40 @@
     background-color: var(--cor-verde-escuro);
 }
 
-.produtos__container__grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 220px);
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(auto-fit, 300px); */
-    width: auto;
+.slider__produtos{
+    position: relative;
     margin: 2rem;
-    gap: 1.5rem;
+}
+
+.slider__produtos:hover>.btn-prev{
+    opacity: 1;
+}
+.slider__produtos:hover>.btn-next{
+    opacity: 1;
+}
+
+.btn-prev, .btn-next{
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    background-color: var(--cor-branca);
+    border: 2px solid transparent;
+    border-radius: 2.5rem;
+    padding: .5rem 1.1rem;
+    color: var(--cor-verde-escuro);
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.btn-next{
+    right: 0;
+}
+
+.btn-prev:hover, .btn-next:hover{
+    border-color: var(--cor-verde-escuro);
 }
 
 @media screen and (max-width: 1028px){
@@ -37,7 +61,7 @@
         font-size: 32px;
     }
 
-    .produtos__container__grid{
+    .produtos__container__slider{
         grid-template-columns: repeat(auto-fit, 220px);
         gap: 1rem;
     }
@@ -52,8 +76,14 @@
         font-size: 32px;
     }
 
-    .produtos__container__grid{
+    .produtos__container__slider{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn-prev, .btn-next{
+        border-radius: 2.5rem;
+        padding: .4rem 0.8rem;
+        font-size: 1rem;
     }
 }
 
@@ -62,13 +92,20 @@
         font-size: 24px;
     }
 
-    .produtos__container__grid{
+    .produtos__container__slider{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 0;
     }
 
-    .skincare, .infantil, .maquiagem, .masculino, .perfumaria{
-        margin: 2rem 1rem;
+    .slider__produtos:hover>.btn-prev{
+        opacity: 0;
+    }
+    .slider__produtos:hover>.btn-next{
+        opacity: 0;
+    }
+
+    .slider__produtos{
+        margin: 1rem;
     }
 }
 

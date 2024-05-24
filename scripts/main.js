@@ -1,5 +1,5 @@
 import {intervalo} from "./carrossel.js";
-import {distribuiProdutos} from "./produtos.js";
+import {sliderProdutos} from "./produtos.js";
 import {insereHeader} from "./header.js";
 import {insereSecao} from "./menu.js";
 
@@ -13,7 +13,7 @@ insereSecao('desktop');
 intervalo();
 
 //PRODUTOS
-distribuiProdutos();
+sliderProdutos();
 
 const darkModeButton = document.getElementById('modo')
 const body = document.querySelector('body')

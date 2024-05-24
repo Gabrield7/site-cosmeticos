@@ -1,6 +1,6 @@
 .card-produto{
     display: grid;
-    margin: auto;
+    margin: 1rem auto;
     background-color: var(--cor-branca);
     border-radius: 15px;
     border: none;
@@ -202,7 +202,7 @@
     background-image: url('../imagens/icones/compras-verde.svg');
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .card-produto{
         gap: 3px;
         height: 370px;
