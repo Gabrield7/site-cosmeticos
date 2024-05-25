@@ -15,8 +15,12 @@ intervalo();
 //PRODUTOS
 sliderProdutos();
 
-const darkModeButton = document.getElementById('modo')
-const body = document.querySelector('body')
+const body = document.querySelector('body');
+
+const dark = document.getElementById('modo');
+const user = document.getElementById('usuario');
+const fav = document.getElementById('favoritos');
+const sacola = document.getElementById('sacola')
 
 // darkModeButton.addEventListener('click', () => {
 //     const currentImage = darkModeButton.style.backgroundImage;
@@ -27,9 +31,13 @@ const body = document.querySelector('body')
 //     }
 // });
 
-darkModeButton.addEventListener('click', () => {
-    darkModeButton.classList.toggle('dark')
-    body.classList.toggle('dark')
+dark.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    
+    dark.classList.toggle('dark');
+    user.classList.toggle('dark');
+    fav.classList.toggle('dark');
+    sacola.classList.toggle('dark');
 });
 
 

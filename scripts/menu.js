@@ -14,10 +14,10 @@ export function admFundo(elemento, tela){
         fundo = document.querySelector('.fundo__desktop');
         
         elemento.addEventListener('mouseover', ()=>{
-            fundo.classList.remove('hidden')
+            fundo.classList.remove('hidden');
         }) 
         elemento.addEventListener('mouseout', ()=>{
-            fundo.classList.add('hidden')
+            fundo.classList.add('hidden');
         })
 
     }else{

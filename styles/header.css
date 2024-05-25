@@ -139,11 +139,22 @@ input[type="search"]::-webkit-search-results-decoration {
 #usuario{
     background-image: url('../imagens/icones/user-verde.svg');
 }
+#usuario.dark{
+    background-image: url('../imagens/icones/user-branco.svg');
+}
+
 #favoritos{
     background-image: url('../imagens/icones/fav-verde.svg');
 }
+#favoritos.dark{
+    background-image: url('../imagens/icones/fav-branco.svg');
+}
+
 #sacola{
     background-image: url('../imagens/icones/compras-verde.svg');
+}
+#sacola.dark{
+    background-image: url('../imagens/icones/compras-branco.svg');
 }
 
 

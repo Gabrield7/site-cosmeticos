@@ -51,7 +51,6 @@ export function sliderProdutos(){
                     breakpoint: 1600,
                     settings: {
                         slidesToShow: 6,
-                        slidesToScroll: 6,
                         draggable: false
                     }
                 }

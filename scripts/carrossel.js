@@ -20,37 +20,76 @@ export function slider(){
 
 //SLIDER DESTAQUE
 
-const controles = document.querySelectorAll(".control");
-let currentItem = 0;
-const items = document.querySelectorAll('.destaque__spot');
-const maxItens = items.length;
+const destaqueGlider = document.querySelector('.destaque__glider');
 
-controles.forEach(control =>{
-    control.addEventListener('click', () => {
-
-        const isLeft = control.classList.contains('arrow-left');
-        if(isLeft){
-            currentItem -= 2;
-        } else{
-            currentItem += 2;
+new Glider(destaqueGlider, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: {
+        prev: '.btn-prev__destaques',
+        next: '.btn-next__destaques'
+    },
+    responsive: [
+        // {
+        //     breakpoint: 550,
+        //     settings: {
+        //         slidesToShow: 3,
+        //         draggable: false
+        //     }
+        // },
+        // {
+        //     breakpoint: 1028,
+        //     settings: {
+        //         slidesToShow: 4,
+        //         draggable: false
+        //     }
+        // },
+        {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 1350,
+            settings: {
+                slidesToShow: 3
+            }
         }
-
-        if(currentItem >= maxItens){
-            currentItem = maxItens - 1;
-        }
-
-        if(currentItem <0){
-            currentItem = 0
-        }
-        
-        items.forEach((slide) => slide.classList.remove('primeiro-slide'))
-
-        items[currentItem].scrollIntoView({
-            inline: "center",
-            behavior: "smooth",
-            block: "nearest"
-        })
-
-        items[currentItem].classList.add('primeiro-slide');
-    })
+    ]
 });
+
+// const controles = document.querySelectorAll(".control");
+// let currentItem = 0;
+// const items = document.querySelectorAll('.destaque__spot');
+// const maxItens = items.length;
+
+// controles.forEach(control =>{
+//     control.addEventListener('click', () => {
+
+//         const isLeft = control.classList.contains('arrow-left');
+//         if(isLeft){
+//             currentItem -= 2;
+//         } else{
+//             currentItem += 2;
+//         }
+
+//         if(currentItem >= maxItens){
+//             currentItem = maxItens - 1;
+//         }
+
+//         if(currentItem <0){
+//             currentItem = 0
+//         }
+        
+//         items.forEach((slide) => slide.classList.remove('primeiro-slide'))
+
+//         items[currentItem].scrollIntoView({
+//             inline: "center",
+//             behavior: "smooth",
+//             block: "nearest"
+//         })
+
+//         items[currentItem].classList.add('primeiro-slide');
+//     })
+// });
