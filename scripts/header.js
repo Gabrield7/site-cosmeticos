@@ -6,23 +6,12 @@ export function insereHeader(){
     `<nav class="cabecalho">
         <div class="nav__desktop">
             <div class="cabecalho__logo-pesquisa">
-                <button type='' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
-                <a href="#">
-                    <button class="cabecalho__logo-button" aria-label="Harmony Haven">
-                        <!-- atribuir img ao button pelo js para add modo dark -->
-                        <img src="../imagens/icones/logo_completa-verde.svg" alt="Logo da Hermony Haven">
-                    </button>
-                </a>
-
-                <div class="cabecalho__pesquisa">
-                    <form class="cabecalho__pesquisa__form">
-                        <input type="search" class="pesquisa__form__input" placeholder="Pesquisar">
-                    </form>
-                    <button aria-label='Pesquisar' class="cabecalho__pesquisa__pesquisar">
-                        <!-- atribuir img ao button pelo js para add modo dark (?)-->
-                        <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="cabecalho__pesquisa__lupa">
-                    </button>
-                </div>
+                <button type='button' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
+                <a href="#" class='cabecalho__logo' aria-label='Logo da Harmony Haven'></a>
+                <form class="pesquisa__form__desktop">
+                    <input type="search" class="form__input" id='search-desktop' placeholder="Pesquisar">
+                    <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
+                </form>
             </div>
 
             <div class="cabecalho__opcoes">
@@ -33,17 +22,11 @@ export function insereHeader(){
             </div>
         </div>
             
-        <div class="pesquisa__mobile">
-            <form class="pesquisa__form__mobile">
-                <input type="search" class="form__input__mobile" placeholder="Pesquisar">
-            </form>
-            <button aria-label='Pesquisar' class="pesquisa__pesquisar__mobile">
-                <!-- atribuir img ao button pelo js para add modo dark (?)-->
-                <img src="./imagens/icones/lupa-branco.svg" alt="ícone de lupa" class="pesquisa__lupa__mobile">
-            </button>
-        </div>
+        <form class="pesquisa__form__mobile">
+            <input type="search" class="form__input" id='search-mobile' placeholder="Pesquisar">
+            <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
+        </form>
     </nav>`;
     menuHamburguer();
 }
-
 

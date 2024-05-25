@@ -14,11 +14,16 @@
     gap: 1rem;
 }
 
-.cabecalho__logo-button{
-    background-image: var(--logo-completa);
-    background: none;
+.cabecalho__logo{
+    display: block;
+    background-image: url('../imagens/icones/logo_completa-verde.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
     border: none;
     cursor: pointer;
+    width: 120px;
     height: 45px;
 }
 
@@ -34,24 +39,16 @@
     cursor: pointer; 
 }
 
-.cabecalho__pesquisa{
-    display: grid;
-    grid-template-columns: 30vw 1.7rem;
-} 
-.pesquisa__mobile{
+.pesquisa__form__desktop{
     display: flex;
-    justify-content: center;
-    width: 100%;
-}
+} 
 
 .pesquisa__form__mobile{
-    width: 100%;
-    margin-left: 1rem;
+    display: none;
 }
 
-.pesquisa__form__input{
+.form__input{
     padding: .7rem;
-    width: 30vw;
     height: 3rem;
     border: 2px solid var(--cor-verde-escuro);
     border-radius: 32px 0px 0px 32px;
@@ -59,28 +56,23 @@
     font-family: var(--fonte-texto);
     padding: 20px;
     color: var(--cor-verde-escuro);
+    background-color: transparent;
+}
+#search-desktop{
+    width: 30vw;
+}
+#search-mobile{
+    width: 100%;
 }
 
-.pesquisa__form__input::placeholder, .form__input__mobile::placeholder{
+.form__input::placeholder{
     color: var(--cor-verde-escuro);
 }
-.pesquisa__form__input:focus, .form__input__mobile:focus{ /*Para remover a 'borda' ao clicar no campo de pesquisa*/
+.form__input:focus{ /*Para remover a 'borda' ao clicar no campo de pesquisa*/
     outline: 0;
 }
-.pesquisa__form__input:focus::-webkit-input-placeholder, .form__input__mobile:focus::-webkit-input-placeholder{ /*remover placeholder ao clicar no campo*/
+.form__input:focus::-webkit-input-placeholder{ /*remover placeholder ao clicar no campo*/
     color: transparent;
-}
-
-.form__input__mobile{
-    padding: .7rem;
-    width: 100%;
-    height: 2rem;
-    border: 2px solid var(--cor-verde-escuro);
-    border-radius: 32px 0px 0px 32px;
-    font-size: 18px;
-    font-family: var(--fonte-texto);
-    padding: 20px;
-    color: var(--cor-verde-escuro);
 }
 
 input[type="text"]::-ms-clear,
@@ -92,24 +84,18 @@ input[type="search"]::-webkit-search-results-decoration {
     display: none;
 }
 
-.cabecalho__pesquisa__pesquisar, .pesquisa__pesquisar__mobile{/*classe do botão pesquisar*/
-    background: var(--cor-verde-escuro);
+.btn-pesquisar{
+    background-image: url('../imagens/icones/lupa-branco.svg');
+    background-size: 1.7rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-right: .5rem;
+    background-color: var(--cor-verde-escuro); 
     border: none;
     cursor: pointer;
     width: 3rem;
     max-height: 3rem;
     border-radius: 0rem 2rem 2rem 0rem;
-}
-.pesquisa__pesquisar__mobile{
-    margin-right: 1rem;
-}
-
-.cabecalho__pesquisa__lupa, .pesquisa__lupa__mobile{
-    max-width:1.7rem;
-    max-height:1.7rem;
-    width: auto;
-    height: auto;
-    padding-right: .5rem;
 }
 
 .cabecalho__opcoes{
@@ -128,40 +114,58 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 40px;
     transition: .5s;
 }
-
 #modo{
     background-image: url('../imagens/icones/dark-mode-verde.svg');
 }
-#modo.dark{
-    background-image: url('../imagens/icones/light-mode-branco.svg');
-}
-
 #usuario{
     background-image: url('../imagens/icones/user-verde.svg');
 }
-#usuario.dark{
-    background-image: url('../imagens/icones/user-branco.svg');
-}
-
 #favoritos{
     background-image: url('../imagens/icones/fav-verde.svg');
 }
-#favoritos.dark{
-    background-image: url('../imagens/icones/fav-branco.svg');
-}
-
 #sacola{
     background-image: url('../imagens/icones/compras-verde.svg');
 }
-#sacola.dark{
+
+
+/* MODO DARK */
+body.dark .cabecalho__menu-hamburguer{
+    background-image: url('../imagens/icones/menu-branco.svg');
+}
+body.dark .cabecalho__logo{
+    background-image: url('../imagens/icones/logo_completa-branco.svg');
+}
+
+body.dark #modo{
+    background-image: url('../imagens/icones/light-mode-branco.svg');
+}
+body.dark #usuario{
+    background-image: url('../imagens/icones/user-branco.svg');
+}
+body.dark #favoritos{
+    background-image: url('../imagens/icones/fav-branco.svg');
+}
+body.dark #sacola{
     background-image: url('../imagens/icones/compras-branco.svg');
 }
 
-
-.pesquisa__mobile{
-    display: none;
+body.dark .form__input{
+    border: 2px solid var(--cor-branca);
+    color: var(--cor-branca);
 }
-
+body.dark .form__input::placeholder{
+    color: var(--cor-branca);
+}
+body.dark .form__input:focus{
+    outline: 0;
+}
+body.dark .form__input:focus::-webkit-input-placeholder{
+    color: transparent;
+}
+body.dark .btn-pesquisar{
+    background-image: url('../imagens/icones/lupa-verde.svg');
+    background-color: var(--cor-branca); 
+}
 
 @media screen and (max-width: 1028px) {
     .nav__desktop{
@@ -170,15 +174,17 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 @media screen and (max-width: 800px){
-    .cabecalho__logo-button{
+    .cabecalho__logo{
         margin-left: 1rem
     }
 
-    .pesquisa__form__input, .cabecalho__pesquisa__lupa, .cabecalho__pesquisa__pesquisar, .cabecalho__pesquisa{
+    .pesquisa__form__desktop{
         display: none;
     }
-    .pesquisa__mobile{
+
+    .pesquisa__form__mobile{
         display: flex;
+        margin: 0 1rem;
     }
     
     .cabecalho__logo-pesquisa{
@@ -196,22 +202,28 @@ input[type="search"]::-webkit-search-results-decoration {
     #usuario{
         display: none;
     }
-
-    /* .cabecalho__pesquisa__mobile{
-        
-    } */
     
+    /* .form__input.dark{
+        border: 2px solid var(--cor-branca);
+        color: var(--cor-branca);
+    }
+    .form__input.dark::placeholder{
+        color: var(--cor-branca);
+    }
+    .form__input.dark:focus{
+        outline: 0;
+    }
+    .form__input.dark:focus::-webkit-input-placeholder{
+        color: transparent;
+    }
+    .btn-pesquisar.dark{
+        background-image: url('../imagens/icones/lupa-verde.svg');
+        background-color: var(--cor-branca); 
+    } */
 }
 
 @media screen and (max-width: 600px){
-    .pesquisa__form__input{
-        width: 30vw;
-    }
-    .cabecalho__pesquisa{
-        grid-template-columns: 30vw 1.7rem;
-    }
     .cabecalho__opcoes{
         gap: .5rem
-    }
-    
+    }   
 }

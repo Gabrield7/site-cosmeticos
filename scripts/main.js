@@ -15,29 +15,12 @@ intervalo();
 //PRODUTOS
 sliderProdutos();
 
+//MODO DARK
 const body = document.querySelector('body');
+const darkToggle = document.getElementById('modo');
 
-const dark = document.getElementById('modo');
-const user = document.getElementById('usuario');
-const fav = document.getElementById('favoritos');
-const sacola = document.getElementById('sacola')
-
-// darkModeButton.addEventListener('click', () => {
-//     const currentImage = darkModeButton.style.backgroundImage;
-//     if (currentImage.includes('dark-mode-verde.svg')) {
-//         darkModeButton.style.backgroundImage = 'url("../imagens/icones/dark-mode-branco.svg")';
-//     } else {
-//         darkModeButton.style.backgroundImage = 'url("../imagens/icones/dark-mode-verde.svg")';
-//     }
-// });
-
-dark.addEventListener('click', () => {
+darkToggle.addEventListener('click', () => {
     body.classList.toggle('dark');
-    
-    dark.classList.toggle('dark');
-    user.classList.toggle('dark');
-    fav.classList.toggle('dark');
-    sacola.classList.toggle('dark');
 });
 
 
