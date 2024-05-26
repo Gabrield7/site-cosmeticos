@@ -10,9 +10,8 @@ export function admFundo(elemento, tela){
     let fundo = null;
     
     if(tela === 'desktop'){
-        console.log(tela)
         fundo = document.querySelector('.fundo__desktop');
-        console.log(fundo)
+
         elemento.addEventListener('mouseover', ()=>{
             fundo.classList.remove('hidden');
         }) 
