@@ -1,0 +1,125 @@
+.banners{
+    width: 100%;
+    margin: 2rem 0 1rem;
+}
+
+.banners__glider{
+    position: relative;
+}
+
+.slider__banners{
+    display: flex;
+}
+
+.slider__link{
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#banner-1{
+    background-image: url('../imagens/banners/banner1-desktop.png');
+}
+#banner-2{
+    background-image: url('../imagens/banners/banner2-desktop.png');
+}
+#banner-3{
+    background-image: url('../imagens/banners/banner3-desktop.png');
+}
+#banner-4{
+    background-image: url('../imagens/banners/banner4-desktop.png');
+}
+#banner-5{
+    background-image: url('../imagens/banners/banner5-desktop.png');
+}
+
+.btn-prev__banner,.btn-next__banner{
+    position: absolute;
+    top: 45%;
+    background-color: var(--cor-branca);
+    border: 2px solid transparent;
+    border-radius: 2.5rem;
+    padding: .5rem 1.1rem;
+    color: var(--cor-verde-escuro);
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: .5s;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+.btn-next__banner{
+    right: 0;
+}
+
+.btn-prev__banner:hover, .btn-next__banner:hover{
+    border-color: var(--cor-verde-escuro);
+}
+
+.dots{
+    margin-top: 1rem;
+}
+
+.dots .glider-dot{
+    border: 1px solid var(--cor-verde-escuro);
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    margin: 0.5rem 1rem;
+}
+
+.dots .active{
+    background-color: var(--cor-verde-escuro);
+    
+
+}
+
+@media screen and (max-width: 1028px) {
+    
+}
+
+@media screen and (max-width: 800px) {
+    .slider__link{
+        aspect-ratio: 1040 / 600;
+    }
+    
+    #banner-1{
+        background-image: url('../imagens/banners/banner1-mobile.png');
+    }
+    #banner-2{
+        background-image: url('../imagens/banners/banner2-mobile.png');
+    }
+    #banner-3{
+        background-image: url('../imagens/banners/banner3-mobile.png');
+    }
+    #banner-4{
+        background-image: url('../imagens/banners/banner4-mobile.png');
+    }
+    #banner-5{
+        background-image: url('../imagens/banners/banner5-mobile.png');
+    }
+
+    .btn-prev__banner,.btn-next__banner{
+        top: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banners{
+        margin: 1rem 0 1rem;
+    }
+    
+    .btn-prev__banner,.btn-next__banner{
+        display: none;
+    }
+
+    .dots .glider-dot{
+        width: 12px;
+        height: 12px;
+        margin: 0 1rem;
+    }
+}
+
+

@@ -57,40 +57,30 @@
     border-radius: 5px;
     padding: 5px 10px;
     text-decoration: none;
-
     font-size: 18px;
     font-weight: 500;
 }
 
 .card-produto__descricao{
     font-family: var(--fonte-texto);
-    /* font-size: 20px; */
     font-weight: 600;
     color: var(--cor-preta);
-    /* margin: 0 20px; */
-
     font-size: 16px;
     margin: 0 10px;
 }
 
 .card-produto__com-desconto{
     font-family: var(--fonte-texto);
-    /* font-size: 32px; */
     font-weight: 800;
     color: var(--cor-preta);
-    /* margin: 0 20px; */
-
     font-size: 24px;
     margin: 0 10px;
 }
 
 .card-produto__preco-original, .card-produto__parcelas{
     font-family: var(--fonte-texto);
-    /* font-size: 20px; */
     font-weight: 600;
     color: var(--cor-preta);
-    /* margin: 0 20px; */
-
     font-size: 16px;
     margin: 0 10px;
 }

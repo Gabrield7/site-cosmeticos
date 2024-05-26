@@ -62,59 +62,59 @@
     color: var(--cor-verde-escuro); 
 }
 
-.social-media__link__imagem{
+.social-media__link{
     height: 40px;
     width: 40px;
     background-repeat: no-repeat;
     transition: .3s;
 }
 
-.instagram{
+#instagram{
     background-image: url(../imagens/icones/instagram-verde.svg);
 }
-.instagram:hover{
+#instagram:hover{
     background-image: url(../imagens/icones/instagram-branco.svg);
 }
 
-.facebook{
+#facebook{
     background-image: url(../imagens/icones/facebook-verde.svg);
 }
-.facebook:hover{
+#facebook:hover{
     background-image: url(../imagens/icones/facebook-branco.svg);
 }
 
-.you-tube{
+#you-tube{
     background-image: url(../imagens/icones/youtube-verde.svg);
 }
-.you-tube:hover{
+#you-tube:hover{
     background-image: url(../imagens/icones/youtube-branco.svg);
 }
 
-.tik-tok{
+#tik-tok{
     background-image: url(../imagens/icones/tiktok-verde.svg);
 }
-.tik-tok:hover{
+#tik-tok:hover{
     background-image: url(../imagens/icones/tiktok-branco.svg);
 }
 
-.spotify{
+#spotify{
     background-image: url(../imagens/icones/spotify-verde.svg);
 }
-.spotify:hover{
+#spotify:hover{
     background-image: url(../imagens/icones/spotify-branco.svg);
 }
 
-.linkedin{
+#linkedin{
     background-image: url(../imagens/icones/linkedin-verde.svg);
 }
-.linkedin:hover{
+#linkedin:hover{
     background-image: url(../imagens/icones/linkedin-branco.svg);
 }
 
-.twitter{
+#twitter{
     background-image: url(../imagens/icones/X_Twitter-verde.svg);
 }
-.twitter:hover{
+#twitter:hover{
     background-image: url(../imagens/icones/X_Twitter-branco.svg);
 }
 

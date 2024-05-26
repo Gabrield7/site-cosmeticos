@@ -1,12 +1,13 @@
 @import url("styles/header.css");
 @import url("styles/menu-principal.css");
-@import url("styles/slider.css");
+@import url("styles/banners.css");
 @import url("styles/destaques.css");
 @import url("styles/card-produtos.css");
 @import url("styles/sessoes-produtos.css");
 @import url("styles/formulario.css");
 @import url("styles/footer.css");
 @import url("styles/menu-hamburguer.css");
+
 @import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&display=swap');
 
@@ -31,7 +32,6 @@ body{
     overflow: auto;
     overflow-x: hidden;
 }
-
 body.dark{
     background-color: var(--cor-preta);
 }

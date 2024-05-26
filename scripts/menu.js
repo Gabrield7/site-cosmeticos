@@ -10,9 +10,9 @@ export function admFundo(elemento, tela){
     let fundo = null;
     
     if(tela === 'desktop'){
-        
+        console.log(tela)
         fundo = document.querySelector('.fundo__desktop');
-        
+        console.log(fundo)
         elemento.addEventListener('mouseover', ()=>{
             fundo.classList.remove('hidden');
         }) 
@@ -41,16 +41,16 @@ export async function insereItem(coluna, tela){
     coluna.items.forEach((item)=>{
         if(Object.keys(item).some(key => key === 'imagem')){ 
             items += 
-            `<il class='secao__lista__item__${tela}'>
+            `<li class='secao__lista__item__${tela}'>
                 <a href='${item.link_item}' class='item__secao__banner__${tela}'>
                     <img src='${item.imagem}' alt='${item.imagem_descricao}' class='item__secao__banner__${tela}'>
                 </a> 
-            </il>`
+            </li>`
         }else{
             items += 
-            `<il class='secao__lista__item__${tela}'>
+            `<li class='secao__lista__item__${tela}'>
                 <a href='${item.link_item}' class='lista__item__link__${tela}'>${item.nome}</a>
-            </il>`
+            </li>`
         }
     });
 
@@ -65,7 +65,7 @@ export async function insereColuna(secao, tela){
 
         listaColuna += 
         `<ul class='secao__lista__${tela}'>
-            <il class='secao__lista__titulo__${tela}'>${coluna.titulo_coluna}</il>
+            <li class='secao__lista__titulo__${tela}'>${coluna.titulo_coluna}</li>
             ${dadosItems}
         </ul>`
     }
@@ -95,16 +95,22 @@ export async function insereSecao(tela){
         }
 
         listSecoes += `
-        <il class='menu-principal__lista__item__${tela}' id='${secao.id}-${tela}'>
+        <li class='menu-principal__lista__item__${tela}' id='${secao.id}-${tela}'>
             ${title}
             <div class='item__secao__${tela}'>
                 ${dadosColunas}
             </div>
-        </il>`;
+        </li>`;
     };
 
     tela === 'desktop'? menuPrincipalDesktop.innerHTML = listSecoes:menuPrincipalMobile.innerHTML = listSecoes;
 
+    //cria o elemento do fundo e adiciona ao menu após o inneHTML, pois o inneHTML subtitui os conteúdos filhos do menu desktop
+    if (tela === 'desktop') {
+        const fundoDesktop = document.createElement('li');
+        fundoDesktop.className = 'fundo__desktop hidden';
+        menuPrincipalDesktop.appendChild(fundoDesktop);
+    }
     //Lida com as espeficidades de cada tipo de seção (mobile ou desktop)
     const itemSecao = `.item__secao__${tela}`
     const itemLinkTopico = `.menu-principal__lista__item__${tela}`
@@ -192,5 +198,4 @@ export function menuHamburguer(){
         }
     });
 }
-
 

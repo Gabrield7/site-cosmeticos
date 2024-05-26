@@ -1,5 +1,5 @@
 .destaque{
-    margin-top: 5%;
+    margin-top: 1rem;
     background-color: var(--cor-verde-escuro);
     height: auto;
     box-shadow: 0 4px 8px 0 var(--cor-cinza), 0 6px 20px 0 var(--cor-cinza);
@@ -8,10 +8,10 @@
 
 .destaque__titulo__texto{
     font-family: var(--fonte-menu);
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700; 
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem;
     color: var(--cor-verde-claro);
     text-shadow: 2px 2px 4px var(--cor-preta);
 }
@@ -142,13 +142,14 @@
 
 @media screen and (max-width: 800px) {
     .destaque__titulo__texto{
-        font-size: 36px;
+        font-size: 32px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .destaque__titulo__texto{
-        font-size: 28px;
+        font-size: 20px;
+        padding: 1.5rem;
     }
 
     .slider__destaque{
