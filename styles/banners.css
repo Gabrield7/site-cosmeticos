@@ -72,12 +72,16 @@
 
 .dots .active{
     background-color: var(--cor-verde-escuro);
-    
-
 }
 
-@media screen and (max-width: 1028px) {
-    
+/* MODO DARK*/
+
+body.dark .dots .glider-dot{
+    border: 1px solid var(--cor-branca);
+}
+
+body.dark .dots .active{
+    background-color: var(--cor-branca);
 }
 
 @media screen and (max-width: 800px) {

@@ -115,6 +115,10 @@
 .btn-next__destaques:hover,.btn-prev__destaques:hover{
     opacity: 1;
 }
+/* MODO DARK */
+body.dark .destaque{
+    box-shadow: none;
+}
 
 @media screen and (max-width: 1028px) {
     .destaque__glider{

@@ -4,7 +4,7 @@
     background-color: var(--cor-branca);
     border-radius: 15px;
     border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 8px 0 rgba(0, 0, 0, 0.2);
     gap: 3px;
     height: 500px;
     width: 220px;
@@ -21,7 +21,6 @@
 .card-produto__imagem{
     width: auto;
     height: auto;
-
     max-width: 200px;
     max-height: 200px;
 }
@@ -189,6 +188,49 @@
     background-image: url('../imagens/icones/compras-verde.svg');
 }
 .card-produto__botao-add-sacola:focus>.botao-add-sacola__imagem{
+    background-image: url('../imagens/icones/compras-verde.svg');
+}
+
+/* MODO DARK */
+body.dark .card-produto{
+    background-color: var(--cor-preta);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, .1), 0 6px 8px 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark .card-produto__fav{
+    background-image: url('../imagens/icones/Fav-branco.svg');
+}
+body.dark .card-produto__fav:hover{
+    background-image: url('../imagens/icones/Fav-full-branco.svg');
+}
+body.dark .card-produto__fav:focus{
+    background-image: url('../imagens/icones/Fav-full-branco.svg');
+}
+
+body.dark .card-produto__desconto{
+    background-color: var(--cor-branca);
+    color: var(--cor-verde-escuro);
+    font-weight: 600;
+}
+
+body.dark .card-produto__descricao, body.dark .card-produto__com-desconto, body.dark .card-produto__preco-original, body.dark .card-produto__parcelas{
+    color: var(--cor-branca);
+}
+
+body.dark .card-produto__botao-add-sacola{
+    background-color: var(--cor-branca);
+}
+body.dark .card-produto__botao-add-sacola:focus{
+    border: 2px solid var(--cor-verde-escuro);
+    background-color: var(--cor-verde-claro);
+}
+body.dark .card-produto__botao-add-sacola:hover{
+    background-color: var(--cor-verde-claro);
+}
+body.dark .botao-add-sacola__texto{
+    color: var(--cor-verde-escuro);
+}
+body.dark .botao-add-sacola__imagem{
     background-image: url('../imagens/icones/compras-verde.svg');
 }
 

@@ -5,13 +5,13 @@
 .menu-principal__lista__desktop{
     display: flex;
     justify-content: space-between;
-    height: 2.5rem;
     position: relative;
 }
 
-
 .menu-principal__lista__item__desktop{
     display: flex;
+    align-items: center;
+    height: 4rem;
 }
 
 #lancamentos-desktop{
@@ -23,14 +23,6 @@
     margin-right: 3rem;
 }
 
-/* #promocoes{
-
-}
-
-#perfumaria{
-
-} */
-
 #corpo-e-banho-desktop, #make-desktop, #cabelos-desktop, #skincare-desktop, #infantil-desktop{
     justify-content: center;
 }
@@ -41,20 +33,11 @@
     text-align: center;
     padding: 0 .5rem;
     height: 2.5rem;
-    background-color: var(--cor-verde-escuro);
     text-decoration: none;
     color: var(--cor-branca);
     font-family: var(--fonte-menu); 
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
-}
-
-.item__secao__desktop:hover,.item__link__desktop:hover~.item__secao__desktop{
-    display: flex;
-}
-
-.item__link__desktop:hover{
-    font-weight: 1000;
     transition: .5s;
 }
 
@@ -69,6 +52,13 @@
     gap: 3rem;
 }
 
+.menu-principal__lista__item__desktop:hover>.item__secao__desktop{
+    display: flex;
+}
+.item__secao__desktop:hover~.item__secao__desktop{
+    display: flex;
+}
+
 .secao__lista__desktop{
     display: flex;
     flex-direction: column;
@@ -80,31 +70,9 @@
     font-family: var(--fonte-texto); 
     font-weight: 700;
     font-size: 16px;
-
 }
 
-/* #lancamentos-desktop>.item__secao__desktop{
-    border-radius: .3rem;
-    background-color: var(--cor-branca);
-    padding: 1rem;
-    top: 100%;
-    position: absolute;
-    z-index: 3;
-    gap: 3rem;
-} */
-
-#lancamentos-desktop>.item__secao__desktop>.secao__lista__desktop{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    width: 170px;
-}
-
-
-
-.lista__item__link__desktop,.secao__lista__item__desktop{
+.secao__lista__item__desktop{
     text-decoration: none;
     color: var(--cor-verde-escuro);
     font-family: var(--fonte-texto); 
@@ -119,13 +87,17 @@
     font-size: 16px;
 }
 
-#lancamentos-desktop>.item__secao__desktop>.secao__lista__desktop>.secao__lista__titulo__desktop{
+#lancamentos-desktop>.item__secao__desktop>.secao__lista__desktop{
     display: flex;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: auto;
-    padding: auto;
-    height: 32px;
+    gap: 1rem;
+    width: 170px;
+}
+
+#lancamentos-desktop>.item__secao__desktop>.secao__lista__desktop>.secao__lista__titulo__desktop{
+    text-align: center;
 }
 
 .item__secao__banner__desktop{
@@ -150,6 +122,29 @@
     font-style: italic;
 }
 
+/* MODO DARK */
+/* body.dark .menu-principal__desktop{
+    background-color: var(--cor-verde-claro);
+} */
+/* body.dark .item__link__desktop{
+    color: var(--cor-branca);
+} */
+
+body.dark .item__secao__desktop{
+    background-color: var(--cor-preta);
+}
+body.dark .secao__lista__titulo__desktop{
+    color: var(--cor-branca);
+}
+body.dark .secao__lista__item__desktop{
+    color: var(--cor-branca);
+}
+
+body.dark .fundo__desktop{
+    background-color: var(--cor-branca);
+    opacity: 0.3;
+}
+
 @media screen and (max-width: 1028px) {
     .item__link__desktop{
         font-size: 16px;
@@ -165,27 +160,5 @@
 @media screen and (max-width: 800px) {
     .menu-principal__desktop{
         display: none;
-    }
-    
-    /* .menu-principal__lista{
-        display: grid;
-        grid-template-columns: repeat(5, auto);
-        gap: 10px;
-        height: 6rem;
-    }
-    .item__link{
-        font-size: 20px;
-    }
-    #lancamentos{
-        margin: auto;
-    }
-    #marcas{
-        margin: auto;
-    } */
-}
-
-@media screen and (max-width: 700px) {
-    .item__link__desktop{
-        font-size: 16px;
     }
 }

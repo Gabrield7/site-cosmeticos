@@ -65,56 +65,56 @@
     font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 500;
-    color: var(--cor-verde-escuro); 
+    color: var(--cor-preta); 
 }
 
 #instagram{
-    background-image: url(../imagens/icones/instagram-verde.svg);
-}
-#instagram:hover{
     background-image: url(../imagens/icones/instagram-branco.svg);
 }
-
-#facebook{
-    background-image: url(../imagens/icones/facebook-verde.svg);
-}
-#facebook:hover{
-    background-image: url(../imagens/icones/facebook-branco.svg);
-}
-
-#you-tube{
-    background-image: url(../imagens/icones/youtube-verde.svg);
-}
-#you-tube:hover{
-    background-image: url(../imagens/icones/youtube-branco.svg);
-}
-
-#tik-tok{
-    background-image: url(../imagens/icones/tiktok-verde.svg);
-}
-#tik-tok:hover{
-    background-image: url(../imagens/icones/tiktok-branco.svg);
-}
-
-#spotify{
-    background-image: url(../imagens/icones/spotify-verde.svg);
-}
-#spotify:hover{
-    background-image: url(../imagens/icones/spotify-branco.svg);
-}
-
-#linkedin{
-    background-image: url(../imagens/icones/linkedin-verde.svg);
-}
-#linkedin:hover{
-    background-image: url(../imagens/icones/linkedin-branco.svg);
+#instagram:hover{
+    background-image: url(../imagens/icones/instagram-verde.svg);
 }
 
 #twitter{
-    background-image: url(../imagens/icones/X_Twitter-verde.svg);
+    background-image: url(../imagens/icones/X_Twitter-branco.svg);
 }
 #twitter:hover{
-    background-image: url(../imagens/icones/X_Twitter-branco.svg);
+    background-image: url(../imagens/icones/X_Twitter-verde.svg);
+}
+
+#facebook{
+    background-image:  url(../imagens/icones/facebook-branco.svg);
+}
+#facebook:hover{
+    background-image: url(../imagens/icones/facebook-verde.svg);
+}
+
+#you-tube{
+    background-image: url(../imagens/icones/youtube-branco.svg);
+}
+#you-tube:hover{
+    background-image: url(../imagens/icones/youtube-verde.svg);
+}
+
+#tik-tok{
+    background-image: url(../imagens/icones/tiktok-branco.svg);
+}
+#tik-tok:hover{
+    background-image: url(../imagens/icones/tiktok-verde.svg);
+}
+
+#spotify{
+    background-image: url(../imagens/icones/spotify-branco.svg);
+}
+#spotify:hover{
+    background-image: url(../imagens/icones/spotify-verde.svg);
+}
+
+#linkedin{
+    background-image: url(../imagens/icones/linkedin-branco.svg);
+}
+#linkedin:hover{
+    background-image: url(../imagens/icones/linkedin-verde.svg);
 }
 
 @media screen and (max-width: 1028px) {
@@ -139,7 +139,10 @@
         font-weight: 400;
     }
     .rodape{
-        padding: 1rem;
+        padding: 1rem 2rem;
+    }
+    .rodape__texto{
+        font-weight: 400;
     }
 }
 
@@ -174,6 +177,14 @@
     }
     .coluna__item__link{
         font-size: 8px;
+    }
+    .rodape__texto{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    .rodape{
+        padding: .5rem 2rem;
+        gap: .25rem;
     }
 }
 

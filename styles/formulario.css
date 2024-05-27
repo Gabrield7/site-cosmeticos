@@ -40,6 +40,7 @@
 
 .formulario__campo__input{
     border: 1px solid var(--cor-verde-escuro);
+    background-color: transparent;
     border-radius: 10px;
     padding: 16px;
     color: var(--cor-verde-escuro);
@@ -84,13 +85,17 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 16px;
     width: 100%;
     border-radius: 10px;
-    border: none;
+    border: 3px solid transparent;
     font-family: var(--fonte-texto);
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     color: var(--cor-branca);
     transition: .5s;
+}
+
+.formulario__botao:focus{
+    border: 3px solid var(--cor-verde-escuro);
 }
 
 .formulario__botao:hover{
@@ -110,6 +115,38 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .formulario__texto-privacidade{
     color: var(--cor-verde-escuro);
+}
+
+/* MODO DARK */
+body.dark .formulario__titulo{
+    color: var(--cor-verde-claro);
+}
+
+body.dark .formulario__campo__label, body.dark .formulario__campo__input, body.dark .formulario__campo__input::placeholder, body.dark .formulario__observacao, body.dark .formulario__texto-privacidade{
+    color: var(--cor-branca);
+}
+
+body.dark .formulario__campo__input{
+    border: 1px solid var(--cor-branca);
+}
+
+body.dark .formulario__campo__input:focus{
+    outline-color: var(--cor-verde-claro);
+}
+
+body.dark .formulario__botao{
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+}
+body.dark .formulario__botao:focus{
+    border: 3px solid var(--cor-verde-escuro);
+}
+body.dark .formulario__botao:hover{
+    background-color: var(--cor-verde-claro);
+}
+
+body.dark .mensagem-erro{
+    color: var(--cor-error-dark);
 }
 
 @media screen and (max-width: 1028px) {

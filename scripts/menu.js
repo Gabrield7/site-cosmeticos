@@ -40,16 +40,12 @@ export async function insereItem(coluna, tela){
     coluna.items.forEach((item)=>{
         if(Object.keys(item).some(key => key === 'imagem')){ 
             items += 
-            `<li class='secao__lista__item__${tela}'>
-                <a href='${item.link_item}' class='item__secao__banner__${tela}'>
+            `<li><a href='${item.link_item}' class='secao__lista__item__${tela}'>
                     <img src='${item.imagem}' alt='${item.imagem_descricao}' class='item__secao__banner__${tela}'>
-                </a> 
-            </li>`
+            </a></li>`
         }else{
             items += 
-            `<li class='secao__lista__item__${tela}'>
-                <a href='${item.link_item}' class='lista__item__link__${tela}'>${item.nome}</a>
-            </li>`
+            `<li><a href='${item.link_item}' class='secao__lista__item__${tela}'>${item.nome}</a></li>`
         }
     });
 
@@ -111,8 +107,8 @@ export async function insereSecao(tela){
         menuPrincipalDesktop.appendChild(fundoDesktop);
     }
     //Lida com as espeficidades de cada tipo de seção (mobile ou desktop)
-    const itemSecao = `.item__secao__${tela}`
-    const itemLinkTopico = `.menu-principal__lista__item__${tela}`
+    const itemSecao = `.menu-principal__lista__item__${tela}`;
+    const itemLinkTopico = `.menu-principal__lista__item__${tela}`;
 
     if(tela === 'desktop'){
         document.querySelectorAll(itemSecao).forEach((arr)=>{
@@ -128,7 +124,7 @@ export async function insereSecao(tela){
             const itemLinkMobile = link.querySelectorAll('.item__link__mobile');
 
             itemLinkMobile.forEach((item)=>{
-                const itemSecaoMobile = Array.from(item.parentNode.querySelectorAll(itemSecao))[0];
+                const itemSecaoMobile = Array.from(item.parentNode.querySelectorAll('.item__secao__mobile'))[0];
                 itemSecaoMobile.classList.add('hidden');
 
                 const setas = item.querySelector('.item__link__seta');
