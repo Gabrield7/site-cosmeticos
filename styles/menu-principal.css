@@ -1,11 +1,13 @@
 .menu-principal__desktop{
     background-color: var(--cor-verde-escuro);
+    padding-top: 5rem;
 }
 
 .menu-principal__lista__desktop{
     display: flex;
     justify-content: space-between;
     position: relative;
+    margin: 0 3rem;
 }
 
 .menu-principal__lista__item__desktop{
@@ -14,13 +16,8 @@
     height: 4rem;
 }
 
-#lancamentos-desktop{
-    margin-left: 3rem; 
-}
-
 #marcas-desktop{
     justify-content: flex-end;
-    margin-right: 3rem;
 }
 
 #corpo-e-banho-desktop, #make-desktop, #cabelos-desktop, #skincare-desktop, #infantil-desktop{
@@ -31,7 +28,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 .5rem;
     height: 2.5rem;
     text-decoration: none;
     color: var(--cor-branca);
@@ -110,8 +106,9 @@
 .fundo__desktop{
     position: absolute;
     background-color: var(--cor-preta);
+    transform: translateX(-3rem);
     top: 100%;
-    height: 150vh;
+    height: 200vh;
     width: 99vw;
     opacity: 0.5;
     z-index: 2;
@@ -145,15 +142,16 @@ body.dark .fundo__desktop{
     opacity: 0.3;
 }
 
-@media screen and (max-width: 1028px) {
+@media screen and (max-width: 1028px) {    
     .item__link__desktop{
         font-size: 16px;
     }
-    #lancamentos-desktop{
-        margin-left: 1rem;
+
+    .menu-principal__lista__desktop{
+        margin: 0 1rem;
     }
-    #marcas-desktop{
-        margin-right: 1rem;
+    .fundo__desktop{
+        transform: translateX(-1rem);
     }
 }
 

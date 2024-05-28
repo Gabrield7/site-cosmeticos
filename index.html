@@ -11,24 +11,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- MENU PRINCIPAL - MOBILE -->
-    <aside class="menu-principal__mobile">
-        <a href="#" class="menu-hamburguer__usuario__container">
-            <div class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></div>
-            <p class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</p>
-            <button type='button' aria-label='Botão fechar menu' class="menu-hamburguer__close hidden"></button>
-        </a>
-        <div class="menu__scroller">
-            <ul class="menu-principal__lista__mobile">
-                <!-- Seções serão inseridas aqui -->
-            </ul>
-        </div> 
-    </aside>
-    <div class="fundo__mobile hidden"></div>
     <!-- HEADER -->
-    <header id="header">
+    <header class="header">
+        <span class="cabecalho-placeholder"></span>
         <nav class="cabecalho">
-            <div class="nav__desktop">
+            <div class="nav-bar">
                 <div class="cabecalho__logo-pesquisa">
                     <button type='button' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
                     <a href="#" class='cabecalho__logo' aria-label='Logo da Harmony Haven'></a>
@@ -51,12 +38,26 @@
                 <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
             </form>
         </nav>
+
+        <!-- MENU PRINCIPAL - MOBILE -->
+        <aside class="menu-principal__mobile">
+            <a href="#" class="menu-hamburguer__usuario__container">
+                <div class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario-mobile"></div>
+                <p class="menu-hamburguer__usuario__texto">Faça login ou cadastre-se</p>
+                <button type='button' aria-label='Botão fechar menu' class="menu-hamburguer__close hidden"></button>
+            </a>
+            <div class="menu__scroller">
+                <ul class="menu-principal__lista__mobile">
+                    <!-- Seções serão inseridas aqui -->
+                </ul>
+            </div> 
+        </aside>
+        <div class="fundo__mobile hidden"></div>
     </header>
     <main>
         <!-- MENU PRINCIPAL - DESKTOP -->
         <section class="menu-principal__desktop">
             <ul class="menu-principal__lista__desktop">
-                <!-- <li class="fundo__desktop"></li> -->
                 <!-- Seções serão inseridas aqui -->
             </ul>
         </section>
@@ -237,7 +238,7 @@
                 Site fictício construído como parte do projeto prático proposto no programa desenvolve do grupo Boticário.
             </p>
             <p class="rodape__texto">
-                Todas as imagens forambaseadas em produtos de terceiros e/ou inteligência artificial. Não condizem em um produto real disponível para compra
+                Todas as imagens foram baseadas em produtos de terceiros e/ou inteligência artificial. Não condizem em um produto real disponível para compra
             </p>
         </div>
     </footer>

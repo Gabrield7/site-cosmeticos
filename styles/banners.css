@@ -1,14 +1,10 @@
 .banners{
     width: 100%;
-    margin: 2rem 0 1rem;
+    padding: 1rem 0;
 }
 
 .banners__glider{
     position: relative;
-}
-
-.slider__banners{
-    display: flex;
 }
 
 .slider__link{
@@ -85,6 +81,11 @@ body.dark .dots .active{
 }
 
 @media screen and (max-width: 800px) {
+    .banners{
+        /* width: 100%;
+        margin: 1rem 0; */
+        padding-top: 10rem;
+    }
     .slider__link{
         aspect-ratio: 1040 / 600;
     }

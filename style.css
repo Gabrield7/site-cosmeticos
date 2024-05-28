@@ -30,12 +30,18 @@ body{
     min-height: 100vh;
     min-width: 350px;
     background-color: var(--cor-branca);
+    
+    /* overflow: hidden; */
     overflow: auto;
     overflow-x: hidden;
 }
 body.dark{
     background-color: var(--cor-preta);
 }
+
+/* main{
+    
+} */
 
 .hidden{
     display: none !important;

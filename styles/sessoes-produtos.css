@@ -20,6 +20,11 @@
     background-color: var(--cor-verde-escuro);
 }
 
+.produtos__container__slider{
+    display: flex;
+    justify-content: center;
+}
+
 .slider__produtos{
     position: relative;
     margin: 2rem;

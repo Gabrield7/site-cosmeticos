@@ -1,3 +1,7 @@
+import {headerScroll, headerTimer} from "./header.js";
+// import {body} from './main.js';
+const body = document.querySelector('body');
+
 const menuPrincipalDesktop = document.querySelector('.menu-principal__lista__desktop');
 const menuPrincipalMobile = document.querySelector('.menu-principal__lista__mobile');
 
@@ -25,11 +29,11 @@ export function admFundo(elemento, tela){
         if(fundo.classList.contains('hidden')){
             elemento.classList.remove('hidden');
             fundo.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            body.style.overflow = 'hidden';
         }else{
             elemento.classList.add('hidden');
             fundo.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            body.style.overflow = 'auto';
         }
     }
 }
@@ -154,6 +158,11 @@ export async function insereSecao(tela){
 
 }
 
+let menuOpen = false;
+export function isMenuOpen(){
+    return menuOpen
+}
+
 export function menuHamburguer(){
     const iconeHamburguer = document.querySelector('.cabecalho__menu-hamburguer');
     const menuMobile = document.querySelector('.menu-principal__mobile');
@@ -171,25 +180,33 @@ export function menuHamburguer(){
     iconeHamburguer.addEventListener('click', () => {
         menuMobile.style.transform = 'translate(270px, 0)';
         admFundo(closeMobileButton,'mobile');
+        headerScroll(true,window);
+        menuOpen = true;
     });
 
     //fechar menu hambúrguer
-    closeMobileButton.addEventListener('click', () => {
+    closeMobileButton.addEventListener('click', (e) => {
+        e.preventDefault();
         menuMobile.style.transform = 'translate(-270px, 0)';
         admFundo(closeMobileButton,'mobile');
+        menuOpen = false;
+        headerTimer();
     });
-    document.querySelector('.fundo__mobile').addEventListener('click', ()=>{
+    document.querySelector('.fundo__mobile').addEventListener('click', (e)=>{
         //fechar o menu também quando clicar fora dele
+        e.preventDefault();
         menuMobile.style.transform = 'translate(-270px, 0)';
         admFundo(closeMobileButton,'mobile');
-    })
+        menuOpen = false;
+        headerTimer();
+    });
 
     //Para impedir que o menu fique aberto quando a tela mudar de tamanho
     window.addEventListener('resize', () => {
         if (window.innerWidth > 800) {
             menuMobile.style.transform = 'translate(-270px, 0)';
             document.querySelector('.fundo__mobile').classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            body.style.overflow = 'auto';
         }
     });
 }

@@ -9,6 +9,7 @@
         height: 100%;
         position: fixed;
         left: -270px;
+        top: 0;
         background-color: var(--cor-branca);
         z-index: 3;
         transition: .5s;
@@ -167,7 +168,7 @@
     }
     
     .fundo__mobile{
-        position: absolute;
+        position: fixed;
         background-color: var(--cor-preta);
         top: 0;
         height: 100%;

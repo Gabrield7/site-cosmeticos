@@ -198,7 +198,7 @@ body.dark .card-produto{
 }
 
 body.dark .card-produto__fav{
-    background-image: url('../imagens/icones/Fav-branco.svg');
+    background-image: url('../imagens/icones/fav-branco.svg');
 }
 body.dark .card-produto__fav:hover{
     background-image: url('../imagens/icones/Fav-full-branco.svg');
