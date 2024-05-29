@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header class="header">
+    <header>
         <span class="cabecalho-placeholder"></span>
         <nav class="cabecalho">
             <div class="nav-bar">
@@ -166,24 +166,29 @@
             <h2 class="formulario__titulo">Faça parte dos primeiros a desvendar nossas próximas surpresas</h2>
             <form class="formulario__container-grid">
                 <fieldset class="formulario__campo">
-                    <label class="formulario__campo__label" for="news-name">Nome</label>
-                    <input id="news-name" type="text" class="formulario__campo__input" placeholder="Digite seu nome" required>
-                    <span class="mensagem-erro">Mensagem de erro</span>
-                </fieldset>
-                <fieldset class="formulario__campo">
-                    <label class="formulario__campo__label" for="news-email">E-mail</label>
-                    <input id="news-email" type="text" class="formulario__campo__input" placeholder="Digite seu e-mail" required>
+                    <label class="formulario__campo__label" for="form_nome">Nome</label>
+                    <input id="form_nome" class="formulario__campo__input" type="text" minlength="3" placeholder="Digite seu nome" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <fieldset class="formulario__campo">
-                    <label class="formulario__campo__label" for="news-celular">Celular(DDD + Telefone)</label>
-                    <input id="news-celular" type="text" class="formulario__campo__input" placeholder="Celular(com DDD)" required>
+                    <label class="formulario__campo__label" for="form_email">E-mail</label>
+                    <input id="form_email" type="text" class="formulario__campo__input" minlength="3" placeholder="Digite seu e-mail" required>
+                    <span class="mensagem-erro"></span>
+                </fieldset>
+                <fieldset class="formulario__campo">
+                    <label class="formulario__campo__label" for="form_celular">Celular(DDD + Telefone)</label>
+                    <input id="form_celular" type="text" class="formulario__campo__input" maxlength="11" placeholder="Celular(com DDD)">
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <button class="formulario__botao" id="cadastrar" type="submit" aria-label="Cadastrar">Cadastrar</button>
             </form>
             <p class="formulario__observacao">Ao se cadastrar, você concorda em receber comunicações nos termos da nossa <a href="#" class="formulario__texto-privacidade">Política de Privacidade</a>.</p>
+            
         </section>
+        <div class="formulario__cadastro-ok">
+            <span class="formulario__cadastro-ok__imagem" src="./imagens/icones/logo-verde.svg" aria-label="Logo simplificada da Harmony Haven"></span>
+            <p class="formulario__cadastro-ok__mensagem">E aí, pronto para se aventurar em um mundo de novidades?<br>Você já está na lista dos sortudos!✨</p>
+        </div>
 
     </main>
 
@@ -246,5 +251,6 @@
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 <script src="./scripts/main.js" type="module"></script>
 <script src="./scripts/carrossel.js"></script>
+<script src="./scripts/validacao-form.js"></script>
 
 </html>

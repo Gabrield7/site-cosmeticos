@@ -8,14 +8,12 @@ const cabecalhoPlaceholder = document.querySelector('.cabecalho-placeholder');
 cabecalho.style.display = 'flex';
 
 export function headerShadow(scroll){
-    //document.addEventListener('DOMContentLoaded', () => {
-        let color = body.classList.contains('dark')? 255:0;
-        if(scroll === 0){
-            cabecalho.style.boxShadow = 'none';  
-        }else{
-            cabecalho.style.boxShadow = `0 4px 8px 0 rgba(${color}, ${color}, ${color}, 0.2)`;
-        }
-    //});
+    let color = body.classList.contains('dark')? 255:0;
+    if(scroll === 0){
+        cabecalho.style.boxShadow = 'none';  
+    }else{
+        cabecalho.style.boxShadow = `0 4px 8px 0 rgba(${color}, ${color}, ${color}, 0.2)`;
+    }
     
 }
 
@@ -23,6 +21,16 @@ let timerHeader;
 let timerDisplay;
 let scrollListenerAdded = false;
 let mouseOver = false;
+let touchActive = false;
+
+export function hideHeader(){
+    cabecalho.style.opacity = '0';  
+    timerDisplay = setTimeout(() => {
+        cabecalho.style.display = 'none';
+        cabecalhoPlaceholder.style.display = 'block';
+    }, 1000);
+
+}
 
 export function headerTimer(){
     clearTimeout(timerHeader); //zerar o temporizador ativado na rolagem anterior, caso não tenha encerrado
@@ -33,20 +41,9 @@ export function headerTimer(){
     cabecalho.style.display = 'flex';
     cabecalhoPlaceholder.style.display = 'none';
 
-    if(currentScrollY === 0){
-        headerShadow(currentScrollY); 
-    }else{
-        headerShadow(currentScrollY);
-        // headerDisplay
-        if(!mouseOver && !isMenuOpen()){ //garante que o timer será aciona somente quando o mouseout = true e menu não estiver aberto
-            timerHeader = setTimeout(()=>{
-                cabecalho.style.opacity = '0';  
-                timerDisplay = setTimeout(() => {
-                    cabecalho.style.display = 'none';
-                    cabecalhoPlaceholder.style.display = 'block';
-                }, 1000);
-            }, 5000);
-        }
+    headerShadow(currentScrollY); 
+    if(currentScrollY !== 0 && !mouseOver && !isMenuOpen()){ //garante que o timer será acionado somente quando o mouseout = true e menu não estiver aberto
+        timerHeader = setTimeout(hideHeader, 2000);
     }
 }
 
@@ -60,7 +57,6 @@ export function headerKeep(){
 
 export function headerScroll(keep){
     if(!scrollListenerAdded){
-        //const event = !keep? 'scroll':'click';
         window.addEventListener('scroll', headerTimer);
         scrollListenerAdded = true; //Para garantir que o ouvinte de evento seja chamado apenas uma vez
     }

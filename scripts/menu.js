@@ -180,7 +180,7 @@ export function menuHamburguer(){
     iconeHamburguer.addEventListener('click', () => {
         menuMobile.style.transform = 'translate(270px, 0)';
         admFundo(closeMobileButton,'mobile');
-        headerScroll(true,window);
+        headerScroll(true);
         menuOpen = true;
     });
 

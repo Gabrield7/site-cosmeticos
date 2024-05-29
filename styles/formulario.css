@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 3rem;
+    margin: 5rem 3rem;
 }
 .formulario__container-grid{
     display: grid;
@@ -18,7 +18,7 @@
     text-align: center;
     text-align: center;
     grid-column: span 4;
-    margin: 3rem 0 4rem;
+    margin-bottom: 4rem;
     color: var(--cor-verde-escuro);
 }
 
@@ -85,7 +85,7 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 16px;
     width: 100%;
     border-radius: 10px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     font-family: var(--fonte-texto);
     font-size: 20px;
     font-weight: 600;
@@ -95,7 +95,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .formulario__botao:focus{
-    border: 3px solid var(--cor-verde-escuro);
+    border: 2px solid var(--cor-verde-escuro);
+    background-color: var(--cor-verde-claro);
 }
 
 .formulario__botao:hover{
@@ -106,7 +107,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .formulario__observacao{
     text-align: justify;
-    margin: 1rem 0;
+    margin-top: 1rem;
     font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 400;
@@ -115,6 +116,37 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .formulario__texto-privacidade{
     color: var(--cor-verde-escuro);
+}
+
+.formulario__cadastro-ok{
+    background-color: var(--cor-branca);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 5rem 3rem;
+    padding: 3rem;
+    height: 20%;
+    border-top: 5px solid var(--cor-verde-escuro);
+    border-bottom: 5px solid var(--cor-verde-escuro);
+}
+
+.formulario__cadastro-ok__imagem{
+    background-image: url('../imagens/icones/logo-verde.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.formulario__cadastro-ok__mensagem{
+    color: var(--cor-verde-escuro);
+    font-family: var(--fonte-texto);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
 }
 
 /* MODO DARK */
@@ -139,7 +171,7 @@ body.dark .formulario__botao{
     color: var(--cor-preta);
 }
 body.dark .formulario__botao:focus{
-    border: 3px solid var(--cor-verde-escuro);
+    border: 2px solid var(--cor-verde-escuro);
 }
 body.dark .formulario__botao:hover{
     background-color: var(--cor-verde-claro);
@@ -149,10 +181,21 @@ body.dark .mensagem-erro{
     color: var(--cor-error-dark);
 }
 
+body.dark .formulario__cadastro-ok{
+    background-color: var(--cor-preta);
+    border-top: 5px solid var(--cor-verde-claro);
+    border-bottom: 5px solid var(--cor-verde-claro);
+}
+
+body.dark .formulario__cadastro-ok__imagem{
+    background-image: url('../imagens/icones/logo-branco.svg');
+}
+
+body.dark .formulario__cadastro-ok__mensagem{
+    color: var(--cor-branca);
+}
+
 @media screen and (max-width: 1028px) {
-    .formulario{
-        margin: 0 5rem;
-    }
     .formulario__container-grid{
         grid-template-columns: auto;
         grid-template-rows: repeat(auto-fit, auto);
@@ -161,7 +204,7 @@ body.dark .mensagem-erro{
 
     .formulario__titulo{
         font-size: 28px;
-        margin: 3rem 0;
+        margin-bottom: 3rem;
     }
 
     .formulario__campo__label{
@@ -176,13 +219,20 @@ body.dark .mensagem-erro{
     }
 
     .formulario__observacao{
-        margin: 2rem 0;
+        margin-top: 2rem;
+    }
+
+    .formulario__cadastro-ok{
+        padding: 3rem 3rem;
+    }
+    .formulario__cadastro-ok__mensagem{
+        font-size: 20px;
     }
 }
 
 @media screen and (max-width: 800px){
     .formulario{
-        margin: 0 3rem;
+        margin: 3rem;
     }
     .formulario__container-grid{
         grid-template-columns: auto;
@@ -192,11 +242,22 @@ body.dark .mensagem-erro{
     .formulario__titulo{
         font-size: 24px;
     }
+
+    .formulario__cadastro-ok{
+        padding: 2rem 1rem;
+    }
+    .formulario__cadastro-ok__imagem{
+        width: 70px;
+        height: 70px;
+    }
+    .formulario__cadastro-ok__mensagem{
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 500px){
     .formulario{
-        margin: 0 2rem;
+        margin: 2rem;
     }
     .formulario__titulo{
         font-size: 20px;
@@ -210,5 +271,9 @@ body.dark .mensagem-erro{
     }
     .formulario__campo__input::placeholder{
         font-size: 16px;
+    }
+
+    .formulario__cadastro-ok{
+        margin: 3rem 2rem;
     }
 }

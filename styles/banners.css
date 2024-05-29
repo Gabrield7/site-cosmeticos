@@ -82,8 +82,6 @@ body.dark .dots .active{
 
 @media screen and (max-width: 800px) {
     .banners{
-        /* width: 100%;
-        margin: 1rem 0; */
         padding-top: 10rem;
     }
     .slider__link{
@@ -112,10 +110,6 @@ body.dark .dots .active{
 }
 
 @media screen and (max-width: 500px) {
-    .banners{
-        margin: 1rem 0 1rem;
-    }
-    
     .btn-prev__banner,.btn-next__banner{
         display: none;
     }
