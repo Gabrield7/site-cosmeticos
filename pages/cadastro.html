@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="shortcut icon" href="../imagens/icones/harmony-haven-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav class="cabecalho">
+            <div class="nav-bar">
+                <div class="cabecalho__logo-pesquisa">
+                    <button type='button' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
+                    <a href="#" class='cabecalho__logo' aria-label='Logo da Harmony Haven'></a>
+                    <form class="pesquisa__form__desktop">
+                        <input type="search" class="form__input" id='search-desktop' placeholder="Pesquisar">
+                        <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
+                    </form>
+                </div>
+    
+                <div class="cabecalho__opcoes">
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone sol" id="modo"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de coração" id="favoritos"></a>
+                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de sacola de compras" id="sacola"></a> 
+                </div>
+            </div>
+                
+            <form class="pesquisa__form__mobile">
+                <input type="search" class="form__input" id='search-mobile' placeholder="Pesquisar">
+                <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
+            </form>
+        </nav>
+    </header>
+</body>
+<script src="./scripts/main.js" type="module"></script>
+<script src="./scripts/validacao-form.js"></script>
+</html>

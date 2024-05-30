@@ -1,6 +1,7 @@
 import {headerShadow, headerScroll, headerMouse} from "./header.js";
 import {sliderProdutos} from "./produtos.js";
 import {insereSecao, menuHamburguer} from "./menu.js";
+import {submitForm} from "./submit-forms.js";
 
 const body = document.querySelector('body');
 
@@ -16,6 +17,9 @@ insereSecao('desktop');
 
 //PRODUTOS
 sliderProdutos();
+
+//VALIDAÇÃO FORMULÁRIO
+submitForm();
 
 //MODO DARK
 const darkToggle = document.getElementById('modo');
