@@ -1,0 +1,438 @@
+/* HEADER */
+.cadastro{
+    background-color: var(--cor-verde-fino);
+}
+.cabecalho__cadastro{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    background-color: var(--cor-branca);
+    padding: 1rem 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.cabecalho__logo__cadastro{
+    grid-column: 2/3;
+    justify-self: center;
+    background-image: url('../imagens/icones/logo_completa-verde.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    height: 45px;
+}
+
+.cadastro__modo{
+    grid-column: 3/4;
+    justify-self: end;
+    align-self: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    transition: .5s;
+    height: 40px;
+}
+
+ /* SEÇÃO CADASTRO */
+.cadastro{
+    padding: 10rem 0 5rem;
+}
+
+.cadastro__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--cor-branca);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 2rem;
+    margin: auto;
+    gap: 2rem
+}
+
+.cadastro__title{
+    font-family: var(--fonte-texto);
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--cor-verde-escuro);
+    margin-bottom: 1rem;
+}
+
+.outro-btn__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cadastro__outro-btn, .botao__login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--cor-verde-escuro);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cor-verde-escuro);
+    box-sizing: border-box;
+    transition: .5s;
+    width: 400px;
+}
+
+.cadastro__outro-btn{
+    padding: .75rem;
+    border-radius: 2rem;
+    text-decoration: none;
+}
+.cadastro__outro-btn:hover{
+    background-color: var(--cor-verde-fino);
+    cursor: pointer;
+}
+
+.cadastro-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.campo__cadastro{     /* FIELDSET */
+    width: 400px;
+}
+
+.campo__cadastro.error input[data-input]{
+    border-color: var(--cor-error);
+}
+
+/* DATA DE NASCIEMENTO */
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+/* SENHA */
+.senha-regras{
+    display: flex;
+    gap: 1rem;
+    border: 1px solid var(--cor-cinza);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: .5rem;
+    flex-direction: column;
+    
+}
+.regra-senha{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    height: fit-content;
+}
+.regra-senha__text, .regra-senha__title{
+    font-size: 16px;
+    font-family: var(--fonte-texto);
+    color: var(--cor-preta);
+}
+.regra-senha__title{
+    font-weight: 600;
+}
+.regra-senha__imagem{
+    background-image: url('../imagens/icones/x-preto.svg');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; /* fator de encolhimento da div*/
+}
+.regra-senha__imagem.icon{
+    background-image: url('../imagens/icones/ok-verde-claro.svg');
+}
+/* .cad_senha, .cad_rep_senha{
+
+} */
+
+/* LABEL */
+.campo__check{
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+/* INPUTS RADIO */
+input[type="radio"] {
+    display: none;
+}
+.campo__radio__container input + label:before{
+    content: '';
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--cor-branca);
+    outline: 2px solid var(--cor-verde-escuro);
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: var(--cor-branca);
+    vertical-align: middle;
+    margin-right: .5rem;
+    margin-bottom: 3px;
+    transition: .2s;
+}
+.campo__radio__container input:checked + label:before{
+    background-color: var(--cor-verde-escuro);
+}
+.campo__radio__container input:hover + label:before{
+    outline: 2px solid var(--cor-verde-claro);
+}
+.campo__radio__container input:checked:hover + label:before{
+    outline: 2px solid var(--cor-verde-claro);
+    background-color: var(--cor-verde-claro);
+}
+
+/* .campo__cadastro.error .campo__radio__container input:checked + label:before{
+    background-color: var(--cor-error);
+} */
+.campo__cadastro.error .campo__radio__container input + label:before{
+    outline: 2px solid var(--cor-error);
+}
+
+/* INPUT CHECKBOX */
+input[type="checkbox"] {
+    display: none;
+}
+.campo__checkbox__container{
+    position: relative;
+    left: 2rem;
+    width: calc(400px - 2rem);
+}
+
+.campo__checkbox__container input + label:before{
+    content: '';
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--cor-verde-escuro);
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: var(--cor-branca);
+    position: absolute;
+    top: calc(50% - 18px / 2);
+    left: -2rem;
+    transition: .2s;
+}
+.campo__checkbox__container input:checked + label:before{
+    border: 2px solid var(--cor-verde-escuro);
+    background-image: url('../imagens/icones/checkbox-verde-escuro.svg');
+    background-repeat: no-repeat;
+    background-color: var(--cor-verde-fino);
+    background-position: center;
+    position: absolute;
+    top: calc(50% - 18px / 2);
+    left: -2rem;
+}
+.campo__checkbox__container input:hover + label:before{
+    border: 2px solid var(--cor-verde-claro);
+}
+.campo__checkbox__container input:checked:hover + label:before{
+    background-image: url('../imagens/icones/checkbox-verde-claro.svg');
+}
+
+/* GÊNERO */
+fieldset[data-id="cad-genero"]{
+    display: flex;
+    gap: 1rem;
+}
+
+#cad-genero{
+    margin-bottom: 1rem;
+} 
+
+.botao__cadastro{
+    width: 400px;
+}
+
+.botao__login{
+    text-align: center;
+    margin-top: -1rem;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+.botao__login:hover{
+    background-color: var(--cor-verde-fino);
+    cursor: pointer;
+}
+
+.campo__cadastro.error .formulario__campo__label{
+    color: var(--cor-error);
+}
+
+
+.cad-required{
+    color: var(--cor-error);
+}
+
+
+/* MODO DARK */
+body.dark .cabecalho__logo__cadastro{
+    background-image: url('../imagens/icones/logo_completa-branco.svg');
+}
+
+body.dark .cadastro{
+    background-color: var(--cor-preta-fino);
+}
+
+body.dark .cabecalho__cadastro{
+    background-color: var(--cor-preta);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.2);
+}
+body.dark .cadastro__container{
+    background-color: var(--cor-preta);
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.2);
+}
+body.dark .cadastro__title{
+    color: var(--cor-branca);
+}
+body.dark .cadastro__outro-btn{
+    border: 1px solid var(--cor-branca);
+    color: var(--cor-branca);
+}
+
+body.dark .regra-senha__text, body.dark .regra-senha__title{
+    color: var(--cor-branca);
+}
+
+body.dark .regra-senha__imagem{
+    background-image: url('../imagens/icones/x-branco.svg');
+}
+body.dark .regra-senha__imagem.icon{
+    background-image: url('../imagens/icones/ok-verde-claro.svg');
+}
+
+body.dark .cad-required{
+    color: var(--cor-error-dark);
+}
+
+body.dark .campo__cadastro.error input[data-input]{
+    border-color: var(--cor-error-dark);
+}
+
+body.dark .campo__radio__container input + label:before{
+    outline-color: var(--cor-branco);
+    background-color: var(--cor-preta);
+    border: 2px solid var(--cor-preta);
+}
+body.dark .campo__radio__container input:checked + label:before{
+    background-color: var(--cor-branca);
+}
+body.dark .campo__radio__container input:hover + label:before{
+    outline: 2px solid var(--cor-verde-claro);
+}
+body.dark .campo__radio__container input:checked:hover + label:before{
+    outline: 2px solid var(--cor-verde-claro);
+    background-color: var(--cor-verde-claro);
+}
+/* RADIO NÃO SELECIONADO */
+body.dark .campo__cadastro.error .formulario__campo__label{
+    color: var(--cor-error-dark);
+}
+/* body.dark .campo__cadastro.error .campo__radio__container input:checked + label:before{
+    background-color: var(--cor-error-dark);
+} */
+body.dark .campo__cadastro.error .campo__radio__container input + label:before{
+    outline: 2px solid var(--cor-error-dark);
+}
+
+body.dark .campo__checkbox__container input + label:before{
+    background-color: var(--cor-preta);
+    border: 2px solid var(--cor-branca);
+}
+body.dark .campo__checkbox__container input:checked + label:before{
+    background-image: url('../imagens/icones/checkbox-branco.svg');
+    background-color: var(--cor-preta-fino);
+}
+body.dark .campo__checkbox__container input:hover + label:before{
+    border: 2px solid var(--cor-verde-claro);
+}
+body.dark .campo__checkbox__container input:checked:hover + label:before{
+    background-image: url('../imagens/icones/checkbox-verde-claro.svg');
+}
+
+body.dark .botao__login{
+    border: 1px solid var(--cor-branca);
+    color: var(--cor-branca);
+}
+
+body.dark .botao__login:hover{
+    background-color: var(--cor-preta-fino);
+
+}
+
+@media screen and (max-width: 700px){
+    .cabecalho__cadastro{
+        padding: 1rem 2rem;
+    }
+    
+    /* INPUT CHECKBOX */
+    .cadastro__title{
+        font-size: 20px;
+    }
+
+    .formulario__campo__label{
+        font-size: 14px;
+    }
+    input[data-input], input[data-input]::placeholder{
+        font-size: 12px;
+    }
+    input[data-input]{
+        padding: 12px;
+    }
+
+    .mensagem-erro{
+        height: 12px;
+        font-size: 12px;
+    }
+    /* .regra-senha__title{
+        font-size: 16px;
+    } */
+    .regra-senha__imagem{
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
+    .regra-senha__text, .regra-senha__title{
+        font-size: 12px;
+    }
+
+    .cadastro__outro-btn, .botao__login{
+        width: 250px;
+        font-size: 14px;
+        /* width: 400px; */
+    }
+
+    .campo__checkbox__container{
+        position: relative;
+        left: 2rem;
+        width: calc(250px - 2rem);
+    }
+    
+    .campo__cadastro{     /* FIELDSET */
+        width: 250px;
+    }
+    .botao__cadastro{
+        width: 250px;
+    }
+
+}

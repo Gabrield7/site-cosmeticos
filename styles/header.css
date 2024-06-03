@@ -105,7 +105,7 @@ input[type="search"]::-webkit-search-results-decoration {
     background-position: center;
     background-repeat: no-repeat;
     padding-right: .5rem;
-    background-color: var(--cor-verde-escuro); 
+    background-color: var(--cor-verde-escuro);
     border: none;
     cursor: pointer;
     width: 3rem;

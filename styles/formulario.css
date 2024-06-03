@@ -37,36 +37,40 @@
     font-weight: 600;
     color: var(--cor-verde-escuro);
 }
+.formulario__campo.error .formulario__campo__label{
+    color: var(--cor-error);
+}
 
-.formulario__campo__input{
+input[data-input]{
     border: 1px solid var(--cor-verde-escuro);
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 16px;
     color: var(--cor-verde-escuro);
     font-family: var(--fonte-texto);
     font-size: 16px;
     box-sizing: border-box;
 }
-.formulario__campo__input.error{
+
+.formulario__campo.error input[data-input]{
     border-color: var(--cor-error);
 }
 
-.formulario__campo__input::placeholder{
+input[data-input]::placeholder{
     font-family: var(--fonte-texto);
     font-size: 16px;
     color: var(--cor-verde-escuro);
     opacity: 50%;
 }
 
-.formulario__campo__input:focus{
+input[data-input]:focus{
     outline-color: var(--cor-verde-escuro);
 }
-.formulario__campo__input.error:focus{
+.formulario__campo.error input[data-input]:focus{
     outline-color: var(--cor-error);
 }
 
-.formulario__campo__input:focus::-webkit-input-placeholder{ 
+input[data-input]:focus::-webkit-input-placeholder{ 
     color: transparent;
 }
 
@@ -90,7 +94,7 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: var(--cor-verde-escuro);
     padding: 16px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 2px solid transparent;
     font-family: var(--fonte-texto);
     font-size: 20px;
@@ -98,6 +102,7 @@ input[type="search"]::-webkit-search-results-decoration {
     text-decoration: none;
     color: var(--cor-branca);
     transition: .5s;
+    cursor: pointer;
 }
 
 .formulario__botao:focus{
@@ -174,22 +179,26 @@ body.dark .formulario__titulo{
     color: var(--cor-verde-claro);
 }
 
-body.dark .formulario__campo__label, body.dark .formulario__campo__input, body.dark .formulario__campo__input::placeholder, body.dark .formulario__observacao, body.dark .formulario__texto-privacidade{
+body.dark .formulario__campo__label, body.dark input[data-input], body.dark input[data-input]::placeholder, body.dark .formulario__observacao, body.dark .formulario__texto-privacidade{
     color: var(--cor-branca);
 }
+body.dark .formulario__campo.error .formulario__campo__label{
+    color: var(--cor-error-dark);
+}
 
-body.dark .formulario__campo__input{
+body.dark input[data-input]{
     border: 1px solid var(--cor-branca);
 }
-body.dark .formulario__campo__input.error{
+body.dark .formulario__campo.error input[data-input]{
     border: 1px solid var(--cor-error-dark);
 }
 
-body.dark .formulario__campo__input:focus{
+body.dark input[data-input]:focus{
     outline: 1px solid var(--cor-branca);
     
 }
-body.dark .formulario__campo__input.error:focus{
+
+body.dark .formulario__campo.error input[data-input]:focus{
     outline: 1px solid var(--cor-error-dark);
 }
 
@@ -238,10 +247,10 @@ body.dark .formulario__cadastro-ok__mensagem{
         font-size: 20px;
         font-weight: 600;
     }
-    .formulario__campo__input{
+    input[data-input]{
         font-size: 20px;
     }
-    .formulario__campo__input::placeholder{
+    input[data-input]::placeholder{
         font-size: 20px;
     }
 
@@ -293,10 +302,10 @@ body.dark .formulario__cadastro-ok__mensagem{
     .formulario__campo__label{
         font-size: 16px;
     }
-    .formulario__campo__input{
+    input[data-input]{
         font-size: 16px;
     }
-    .formulario__campo__input::placeholder{
+    input[data-input]::placeholder{
         font-size: 16px;
     }
 

@@ -164,20 +164,20 @@
         <!-- SESSÃO DE CADASTRO DE USUÁRIO -->
         <section class="formulario">
             <h2 class="formulario__titulo">Faça parte dos primeiros a desvendar nossas próximas surpresas</h2>
-            <form class="formulario__container-grid">
+            <form class="formulario__container-grid" autocomplete="off">
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="form_nome">Nome</label>
-                    <input id="form_nome" class="formulario__campo__input" type="text" minlength="3" placeholder="Digite seu nome" required>
+                    <input name="nome" id="form_nome" type="text" data-input minlength="3" placeholder="Digite seu nome" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="form_email">E-mail</label>
-                    <input id="form_email" type="text" class="formulario__campo__input" minlength="4" placeholder="Digite seu e-mail" required>
+                    <input name="email" id="form_email" type="text" data-input minlength="4" placeholder="Digite seu e-mail" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <fieldset class="formulario__campo">
                     <label class="formulario__campo__label" for="form_celular">Celular(DDD + Telefone)</label>
-                    <input id="form_celular" type="text" class="formulario__campo__input" maxlength="11" placeholder="Celular(com DDD)">
+                    <input name="celular" id="form_celular" type="text" data-input maxlength="15" placeholder="Celular(com DDD)">
                     <span class="mensagem-erro"></span>
                 </fieldset>
                 <button class="formulario__botao" id="submit_form" type="submit" aria-label="Cadastrar" disabled>Cadastrar</button>
@@ -192,7 +192,7 @@
 
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="footer__links">
             <ul class="coluna__links">
                 <li class="coluna__links__titulo"> <b>Harmony Haven</b> </li>
@@ -243,7 +243,7 @@
                 Site fictício construído como parte do projeto prático proposto no programa desenvolve do grupo Boticário.
             </p>
             <p class="rodape__texto">
-                Todas as imagens foram baseadas em produtos de terceiros e/ou inteligência artificial. Não condizem em um produto real disponível para compra
+                Todas as imagens foram baseadas em produtos de terceiros ou gerados por inteligência artificial. Não condizem em um produto real disponível para compra
             </p>
         </div>
     </footer>
@@ -251,6 +251,5 @@
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 <script src="./scripts/main.js" type="module"></script>
 <script src="./scripts/carrossel.js"></script>
-<!-- <script src="./scripts/validacao-form.js"></script> -->
 
 </html>

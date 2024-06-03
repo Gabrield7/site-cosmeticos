@@ -1,4 +1,3 @@
-// import {body} from "./main.js";
 import {isMenuOpen} from "./menu.js";
 
 const body = document.querySelector('body');

@@ -3,23 +3,22 @@ import {validaForm} from "./validacoes.js";
 const form = document.querySelector('.formulario');
 const formContainer= document.querySelector('.formulario__container-grid');
 const formularioOk = document.querySelector('.formulario__cadastro-ok');
-const formInput = document.querySelectorAll('.formulario__campo__input');
-const formBtn = document.getElementById('submit_form');
+const formInput = document.querySelectorAll('[data-input]');
+const formBtn = document.querySelector('.formulario__botao');
 
-//FOMULÁRIO - PÁGINA INICIAL
 const mensagensForm = {
-    form_nome: {
+    nome: {
         valueMissing: "Campo obrigatório",
         patternMismatch: "Nome inválido",
         tooShort: "Nome inválido"
     },
-    form_email: {
+    email: {
         valueMissing: "Campo obrigatório",
         typeMismatch: "E-mail inválido",
         tooShort: "E-mail inválido",
         patternMismatch: "E-mail inválido"
     },
-    form_celular: {
+    celular: {
         typeMismatch: "Telefone inválido",
         tooShort: "Telefone inválido"
     }
@@ -30,9 +29,9 @@ export function submitForm(){
         e.preventDefault(); //evita a página recarregar ao submeter formulário
         
         const formulario = {
-            "nome": e.target.elements["form_nome"].value,
-            "email": e.target.elements["form_email"].value,
-            "celular": e.target.elements["form_celular"].value.replace(/\D/g, "") //reformartar numero de telefone
+            "nome": e.target.elements["nome"].value,
+            "email": e.target.elements["email"].value,
+            "celular": e.target.elements["celular"].value.replace(/\D/g, "") //reformartar numero de telefone
         }
         
         localStorage.setItem('formulario', JSON.stringify(formulario));//transforma o objeto (JSON) em string e armazena na localStorage
@@ -43,19 +42,19 @@ export function submitForm(){
 }
 
 let validacaoFuncForm = 
-`if(input.id === 'form_email'){
+`if(input.name === 'email'){
     validaEmail(input, mensagens);
 } 
-if(input.id === 'form_celular'){
+if(input.name === 'celular'){
     validaTelefone(input, mensagens);
 }`;
 
 let formatacaoFuncForm = 
-`if(input.id === 'form_celular'){
+`if(input.name === 'celular'){
     formataTelefone(input);
 }`;
 
-validaForm(formInput, mensagensForm, validacaoFuncForm, formatacaoFuncForm);
+validaForm(formInput, mensagensForm, validacaoFuncForm, formatacaoFuncForm, formBtn, form);
 
-//FORMULÁRIO CADASTRO DE USUÁRIO
+
 

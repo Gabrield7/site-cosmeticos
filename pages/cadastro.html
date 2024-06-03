@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,32 +11,160 @@
 </head>
 <body>
     <header>
-        <nav class="cabecalho">
-            <div class="nav-bar">
-                <div class="cabecalho__logo-pesquisa">
-                    <button type='button' class='cabecalho__menu-hamburguer' aria-label='menu hamburguer'></button>
-                    <a href="#" class='cabecalho__logo' aria-label='Logo da Harmony Haven'></a>
-                    <form class="pesquisa__form__desktop">
-                        <input type="search" class="form__input" id='search-desktop' placeholder="Pesquisar">
-                        <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
-                    </form>
-                </div>
-    
-                <div class="cabecalho__opcoes">
-                    <a href="#" class="cabecalho__opcoes__item" alt="ícone sol" id="modo"></a>
-                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de usuário" id="usuario"></a>
-                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de coração" id="favoritos"></a>
-                    <a href="#" class="cabecalho__opcoes__item" alt="ícone de sacola de compras" id="sacola"></a> 
-                </div>
-            </div>
-                
-            <form class="pesquisa__form__mobile">
-                <input type="search" class="form__input" id='search-mobile' placeholder="Pesquisar">
-                <button aria-label='ícone de lupa' class="btn-pesquisar"></button>
-            </form>
+        <nav class="cabecalho__cadastro">
+            <!-- <div class="cabecalho__cadastro__container"> -->
+                <a href="#" class='cabecalho__logo__cadastro' aria-label='Logo da Harmony Haven'></a>
+                <a href="#" class="cadastro__modo" alt="ícone sol" id="modo"></a>   
+            <!-- </div> -->
         </nav>
     </header>
+    <main>
+        <section class="cadastro">
+            <div class="cadastro__container">
+                <h1 class="cadastro__title">cadastrar nova conta</h1>
+                
+                <div class="outro-btn__container">
+                    <a href="#" class="cadastro__outro-btn">
+                        <img src="../imagens/icones/logo_google.png" alt="Logo do google" class="outro-btn__img"> 
+                        <p class="outro-btn__text">cadastrar com google</p>
+                    </button>
+                    <a href="#" class="cadastro__outro-btn">
+                        <img src="../imagens/icones/logo_facebook.png" alt="Logo do facebook" class="outro-btn__img"> 
+                        <p class="outro-btn__text">cadastrar com facebook</p>
+                    </a>
+                </div>
+                
+                <form class="cadastro-form" novalidate>
+                    
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_nome">Nome <b class="cad-required">*</b></label>
+                        <input name="nome" id="cad_nome" data-input type="text" minlength="3" placeholder="Digite seu nome" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_sobrenome">Sobrenome <b class="cad-required">*</b></label>
+                        <input name="sobrenome" id="cad_sobrenome" data-input type="text" minlength="3" placeholder="Digite seu sobrenome" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_email">E-mail <b class="cad-required">*</b></label>
+                        <input name="email" id="cad_email" type="text" data-input minlength="4" placeholder="Digite seu e-mail" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_cpf">CPF <b class="cad-required">*</b></label>
+                        <input name="cpf" id="cad_cpf" type="text" data-input minlength="14" maxlength="14" placeholder="Digite seu CPF" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_senha">Senha <b class="cad-required">*</b></label>
+                        <input name="senha" id="cad_senha" type="password" data-input placeholder="Crie sua senha" required>
+                        <span class="mensagem-erro"></span>
+                        <div class="senha-regras">
+                            <legend class="regra-senha__title">A senha deve ter pelo menos:</legend>
+                            <div class="regra-senha">
+                                <span id="cond1" class="regra-senha__imagem"></span> 
+                                <p class="regra-senha__text">um caractere especial (ex.: “@“ “#” “!” “%”)</p>
+                            </div>
+                            <div class="regra-senha">
+                                <span id="cond2" class="regra-senha__imagem"></span> 
+                                <p class="regra-senha__text">um número (0 a 9)</p>
+                            </div>
+                            <div class="regra-senha">
+                                <span id="cond3" class="regra-senha__imagem"></span> 
+                                <p class="regra-senha__text">uma letra maiúscula (ABC)</p>
+                            </div>
+                            <div class="regra-senha">
+                                <span id="cond4"  class="regra-senha__imagem"></span> 
+                                <p class="regra-senha__text">uma letra minúscula (abc)</p>
+                            </div>
+                            <div class="regra-senha">
+                                <span id="cond5" class="regra-senha__imagem"></span> 
+                                <p class="regra-senha__text">6 caracteres</p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_rep_senha">Repetir senha <b class="cad-required">*</b></label>
+                        <input name="rep_senha" id="cad_rep_senha" type="password" data-input placeholder="Crie sua senha" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_nascimento">Data de nascimento <b class="cad-required">*</b></label>
+                        <input name="nascimento" id="cad_nascimento" type="text" data-input placeholder="dd/mm/aaaa" maxlength="10" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+                    <!-- ATENÇÃO -->
+                    <fieldset class="formulario__campo campo__cadastro" data-id="cad-genero">
+                        <legend class="formulario__campo__label" id="cad-genero">Gênero <b class="cad-required">*</b></legend>
+                        <div class="campo__radio__container">
+                            <input name="genero" id="cad_femi" type="radio" value="Feminino" data-input class="formulario__campo__radio">
+                            <label class="formulario__campo__label campo__check" for="cad_femi">Feminino</label>
+                        </div>
+                        <div class="campo__radio__container">
+                            <input name="genero" id="cad_masc" type="radio" value="Masculino" data-input class="formulario__campo__radio">
+                            <label class="formulario__campo__label campo__check" for="cad_masc">Masculino</label>
+                        </div>
+                        <div class="campo__radio__container">
+                            <input name="genero" id="cad_outro" type="radio" value="Não identificar" data-input class="formulario__campo__radio">
+                            <label class="formulario__campo__label campo__check" for="cad_outro">Não identificar</label>
+                        </div>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <label class="formulario__campo__label" for="cad_celular">Celular(DDD + Telefone) <b class="cad-required">*</b></label>
+                        <input name="celular" id="cad_celular" type="text" data-input maxlength="15" placeholder="(00) 00000-0000" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="formulario__campo campo__cadastro" data-id="whatsapp">
+                        <label class="formulario__campo__label" for="cad_whatsapp">WhatsApp</label>
+                        <input name="whatsapp" id="cad_whatsapp" type="text" data-input maxlength="15" placeholder="(00) 00000-0000">
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+                    
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <div class="campo__checkbox__container">
+                            <input name="news" id="cad_news" type="checkbox" data-input class="cadastro__checkbox" checked>
+                            <label class="formulario__campo__label campo__check" for="cad_news">Desejo receber novidades, promoções e ofertas da Harmony Haven pelo WhatsApp, SMS e E-mail.</label>
+                        </div>
+                    </fieldset>
+                    <!-- ATENÇÃO -->
+                    <fieldset class="formulario__campo campo__cadastro">
+                        <div class="campo__checkbox__container">
+                            <input name="check_terms" id="cad_check_terms" type="checkbox" data-input class="cadastro__checkbox" checked required>
+                            <label class="formulario__campo__label campo__check" for="cad_check_terms">
+                                Concordo com os termos da <a href="#" class="formulario__texto-privacidade">política de privacidade.</a> da Harmony Haven.
+                                <b class="cad-required">*</b>
+                            </label>
+                        </div>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <button class="formulario__botao botao__cadastro" id="submit_cad" type="submit" aria-label="Cadastrar">Cadastrar</button>
+                </form>
+                <a class="botao__login" id="cadastro_to_login" aria-label="Cadastrar">Já tenho uma conta</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="rodape">
+            <p class="rodape__texto">
+                Site fictício construído como parte do projeto prático proposto no programa desenvolve do grupo Boticário.
+            </p>
+            <p class="rodape__texto">
+                Todas as imagens foram baseadas em produtos de terceiros e/ou gerados por inteligência artificial. Não condizem em um produto real disponível para compra
+            </p>
+        </div>
+    </footer>
 </body>
-<script src="./scripts/main.js" type="module"></script>
-<script src="./scripts/validacao-form.js"></script>
+<script src="../scripts/cadastro.js" type="module"></script>
+
 </html>

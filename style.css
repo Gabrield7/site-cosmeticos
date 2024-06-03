@@ -7,17 +7,19 @@
 @import url("styles/formulario.css");
 @import url("styles/footer.css");
 @import url("styles/menu-hamburguer.css");
+@import url("styles/cadastro.css");
 
 @import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&display=swap');
 
 :root {
-    /* --logo-completa: url(../imagens/icones/logo_completa-verde.svg); */
+    --cor-verde-fino: #ddeff0;
     --cor-verde-claro: #47dea8;
     --cor-verde-escuro: #275756;
     --cor-branca: #fffafa;
     --cor-branco-gelo: #f4f3f9;
     --cor-preta: #2D3333;
+    --cor-preta-fino: #394040;
     --cor-cinza: #888888;
     --cor-error: red;
     --cor-error-dark: #FF6B6B;
@@ -30,18 +32,12 @@ body{
     min-height: 100vh;
     min-width: 350px;
     background-color: var(--cor-branca);
-    
-    /* overflow: hidden; */
     overflow: auto;
     overflow-x: hidden;
 }
 body.dark{
     background-color: var(--cor-preta);
 }
-
-/* main{
-    
-} */
 
 .hidden{
     display: none !important;
