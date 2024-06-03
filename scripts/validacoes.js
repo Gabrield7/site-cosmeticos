@@ -1,7 +1,12 @@
-export function validaForm(formInput, mensagens, validacoes, formatacoes, submitBtn, form){
+export function validaForm(formInput, mensagens, validacoes, formatacoes, submitBtn){
     let inputOk = [];
 
     formInput.forEach((input, i)=>{
+        
+        const cadastro = JSON.parse(localStorage.getItem('cadastro'));
+        if(cadastro){
+            input.value = cadastro[input.name];
+        }
 
         let mensagem = '' || 'Campo obrigatório'; //no caso do evento input não ser acionado
         let fieldset;
@@ -10,6 +15,7 @@ export function validaForm(formInput, mensagens, validacoes, formatacoes, submit
         if(input.type == 'text' || input.type == 'password'){
             fieldset = input.parentNode;
             mensagemError = fieldset.querySelector('.mensagem-erro');
+            
 
             input.addEventListener('invalid', (e)=>e.preventDefault()); //impede de aparecer mensagem padrão de campo inválido
             inputOk[i] = !input.required? true:false; //valor inicial
@@ -68,19 +74,6 @@ export function validaForm(formInput, mensagens, validacoes, formatacoes, submit
         }
     });
 }
-
-// export function errorRegister(input, mensagens, mensagemError, fieldset){
-//     for(let fieldsetName in mensagens){
-//         if(input.id == fieldsetName){ 
-//             Object.keys(mensagens[fieldsetName]).forEach(erro => {
-//                 if(input.validity[erro]){
-//                     mensagemError.textContent = mensagens[fieldsetName][erro];
-//                     mensagemError.textContent !== ''? fieldset.classList.add('error'):fieldset.classList.remove('error');
-//                 }
-//             });
-//         }
-//     }
-// }
 
 export function checkError(input, condition, erro, mensagens){
     input.setCustomValidity('');

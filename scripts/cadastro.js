@@ -6,22 +6,16 @@ const body = document.querySelector('body');
 const cadSubmit = document.querySelector('.cadastro-form'); //para 'submit function'
 const cadInput = document.querySelectorAll('[data-input]');
 const cadBtn = document.querySelector('.botao__cadastro');
-
+const documentFieldset = document.querySelectorAll('.campo__cadastro');
 
 cadSubmit.addEventListener('submit', (e)=>{
     e.preventDefault();
     
     let mensagemError;
     let fieldset;
-    //let inputOk = [];
     const inputs = cadSubmit.querySelectorAll('[data-input]');
 
-    inputs.forEach((input, i)=>{
-        // if(input.required || input.value.length !== 0){
-        //     inputOk[i] = input.checkValidity()? true:false;
-        // }else{
-        //     inputOk[i] = true;
-        // }
+    inputs.forEach((input)=>{
         if(input.type == 'checkbox' || input.type == 'radio'){
             fieldset = input.parentNode.parentNode;
             mensagemError = fieldset.querySelector('.mensagem-erro');
@@ -36,51 +30,59 @@ cadSubmit.addEventListener('submit', (e)=>{
                     if(input.validity[erro]){
                         mensagemError.textContent = mensagensCad[fieldsetName][erro];
                         mensagemError.textContent !== ''? fieldset.classList.add('error'):fieldset.classList.remove('error');
-                        //inputOk[i] = false;
-                        //console.log(input.name, 'contem erro');
-                        //console.log(mensagemError.textContent);
-                        //inputOk[i] = mensagemError.textContent == ''? true:input.required? false:true;
-                        
-                    }else{
-                        //inputOk[i] = 'true2';
-                        //console.log(input.name, 'não contem erro');
-                        //console.log(mensagemError.textContent);
-                        //inputOk[i] = mensagemError.textContent == ''? true:input.required? false:true;
                     }
                 });
             }
             
         }
-        //console.log(inputOk[i])
-        //console.log(input.name, input.checkValidity());
     });
 
     const cadastro = {
         "nome": e.target.elements["nome"].value,
         "sobrenome": e.target.elements["sobrenome"].value,
         "email": e.target.elements["email"].value,
-        "cpf": e.target.elements["cpf"].value,
-        "senha": e.target.elements["senha"],
-        "rep_senha": e.target.elements["rep_senha"],
-        "nascimento": e.target.elements["rep_senha"],
-        "genero": e.target.elements["genero"],
+        "cpf": e.target.elements["cpf"].value.replace(/\D/g, ""),
+        "senha": e.target.elements["senha"].value,
+        "rep_senha": e.target.elements["rep_senha"].value,
+        "nascimento": e.target.elements["nascimento"].value,
+        "genero": e.target.elements["genero"].value,
         "celular": e.target.elements["celular"].value.replace(/\D/g, ""),
         "whatsapp": e.target.elements["whatsapp"].value.replace(/\D/g, ""),
-        "news": e.target.elements["news"],
-        "check_terms": e.target.elements["check_terms"],
+        "news": e.target.elements["news"].value,
+        "check_terms": e.target.elements["check_terms"].value,
     }
 
-    const mensagemContainer = document.querySelectorAll('.mensagem-erro');
-
-    // Array.from(mensagemContainer).forEach(mensagem=>{
-    //     console.log(mensagem.textContent, mensagem.textContent == '')
-    // })
-
-    const cadastroOk = Array.from(mensagemContainer).every((input) => input.textContent == '');
+    const mensagemContainer = Array.from(document.querySelectorAll('.mensagem-erro'));
+    const cadastroOk = mensagemContainer.every((input) => input.textContent == '');
 
     if(cadastroOk){
         localStorage.setItem('cadastro', JSON.stringify(cadastro));
-        //console.log(cadastro);
+        window.location.href = '../index.html';
+    }else{
+
+        const filedsetTrue = Array.from(documentFieldset).filter((fieldset)=>{
+            const fieldErrorMesage = fieldset.querySelector('.mensagem-erro');
+            
+            if(fieldErrorMesage){
+                return fieldErrorMesage.textContent !== ''
+            }
+
+        });
+
+        Array.from(filedsetTrue)[0].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+
+        Array.from(filedsetTrue).forEach((element)=>{
+            element.classList.remove('fadeInOut');//
+            void element.offsetWidth; //resetar animação
+
+            setTimeout(() => {
+                element.classList.add('fadeInOut');
+                //element.style.animationDirection = 'alternate'
+            }, 600);
+        });
     }
 
 });
@@ -156,9 +158,7 @@ if(input.name === 'nascimento'){
 if(input.name === 'celular' || input.name === 'whatsapp'){
     validaTelefone(input, mensagens);
 }`;
-// if(input.name === 'genero'){
-//     validaRadio(input, radioCheck, mensagens);
-// }
+
 let formatacaoFuncCad = 
 `if(input.name === 'celular' || input.name === 'whatsapp'){
     formataTelefone(input);
@@ -170,7 +170,7 @@ if(input.name === 'nascimento'){
     formataData(input)
 }`;
 
-validaForm(cadInput, mensagensCad, validacaoFuncCad, formatacaoFuncCad, cadBtn, cadSubmit);
+validaForm(cadInput, mensagensCad, validacaoFuncCad, formatacaoFuncCad, cadBtn);
 
 
 

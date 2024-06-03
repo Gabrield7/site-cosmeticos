@@ -42,7 +42,7 @@ export function headerTimer(){
 
     headerShadow(currentScrollY); 
     if(currentScrollY !== 0 && !mouseOver && !isMenuOpen()){ //garante que o timer será acionado somente quando o mouseout = true e menu não estiver aberto
-        timerHeader = setTimeout(hideHeader, 2000);
+        timerHeader = setTimeout(hideHeader, 5000);
     }
 }
 

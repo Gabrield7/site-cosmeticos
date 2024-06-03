@@ -1,6 +1,6 @@
 import {validaForm} from "./validacoes.js";
 
-const form = document.querySelector('.formulario');
+//const form = document.querySelector('.formulario');
 const formContainer= document.querySelector('.formulario__container-grid');
 const formularioOk = document.querySelector('.formulario__cadastro-ok');
 const formInput = document.querySelectorAll('[data-input]');
@@ -54,7 +54,7 @@ let formatacaoFuncForm =
     formataTelefone(input);
 }`;
 
-validaForm(formInput, mensagensForm, validacaoFuncForm, formatacaoFuncForm, formBtn, form);
+validaForm(formInput, mensagensForm, validacaoFuncForm, formatacaoFuncForm, formBtn);
 
 
 

@@ -114,10 +114,24 @@
 
 .campo__cadastro{     /* FIELDSET */
     width: 400px;
+    opacity: 1;
+}
+
+@keyframes error{
+    0% {opacity: 1}
+    30% {opacity: .2}
+    100% {opacity: 1}
+}
+.campo__cadastro.fadeInOut{
+    animation: error .8s ease;
 }
 
 .campo__cadastro.error input[data-input]{
     border-color: var(--cor-error);
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--cor-verde-escuro) !important;
+    -webkit-box-shadow: 0 0 0 30px var(--cor-branca) inset;
 }
 
 /* DATA DE NASCIEMENTO */
@@ -134,7 +148,6 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     padding: 1rem;
     margin-top: .5rem;
     flex-direction: column;
-    
 }
 .regra-senha{
     display: flex;
@@ -231,7 +244,6 @@ input[type="checkbox"] {
     position: absolute;
     top: calc(50% - 18px / 2);
     left: -2rem;
-    transition: .2s;
 }
 .campo__checkbox__container input:checked + label:before{
     border: 2px solid var(--cor-verde-escuro);
@@ -248,6 +260,10 @@ input[type="checkbox"] {
 }
 .campo__checkbox__container input:checked:hover + label:before{
     background-image: url('../imagens/icones/checkbox-verde-claro.svg');
+}
+
+.campo__cadastro.error .campo__checkbox__container input + label:before{
+    border: 2px solid var(--cor-error);
 }
 
 /* GÊNERO */
@@ -279,6 +295,9 @@ fieldset[data-id="cad-genero"]{
     color: var(--cor-error);
 }
 
+.campo__cadastro.error .formulario__texto-privacidade{
+    color: var(--cor-error);
+}
 
 .cad-required{
     color: var(--cor-error);
@@ -329,6 +348,11 @@ body.dark .campo__cadastro.error input[data-input]{
     border-color: var(--cor-error-dark);
 }
 
+body.dark input:-webkit-autofill {
+    -webkit-text-fill-color: var(--cor-branca) !important;
+    -webkit-box-shadow: 0 0 0 30px var(--cor-preta) inset;
+}
+
 body.dark .campo__radio__container input + label:before{
     outline-color: var(--cor-branco);
     background-color: var(--cor-preta);
@@ -348,9 +372,6 @@ body.dark .campo__radio__container input:checked:hover + label:before{
 body.dark .campo__cadastro.error .formulario__campo__label{
     color: var(--cor-error-dark);
 }
-/* body.dark .campo__cadastro.error .campo__radio__container input:checked + label:before{
-    background-color: var(--cor-error-dark);
-} */
 body.dark .campo__cadastro.error .campo__radio__container input + label:before{
     outline: 2px solid var(--cor-error-dark);
 }
@@ -370,11 +391,17 @@ body.dark .campo__checkbox__container input:checked:hover + label:before{
     background-image: url('../imagens/icones/checkbox-verde-claro.svg');
 }
 
+body.dark .campo__cadastro.error .campo__checkbox__container input + label:before{
+    border: 2px solid var(--cor-error-dark);
+}
+body.dark .campo__cadastro.error .formulario__texto-privacidade{
+    color: var(--cor-error-dark);
+}
+
 body.dark .botao__login{
     border: 1px solid var(--cor-branca);
     color: var(--cor-branca);
 }
-
 body.dark .botao__login:hover{
     background-color: var(--cor-preta-fino);
 
