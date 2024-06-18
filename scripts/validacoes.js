@@ -1,78 +1,64 @@
-export function validaForm(formInput, mensagens, validacoes, formatacoes, submitBtn){
+export function validaForm(formInput, mensagens, submitBtn){
     let inputOk = [];
-
+    let mensagem = 'Campo obrigatório'; //no caso do evento input não ser acionado
+    
     formInput.forEach((input, i)=>{
+        loadLocalStorage(input);
         
-        const cadastro = JSON.parse(localStorage.getItem('cadastro'));
-        if(cadastro){
-            input.value = cadastro[input.name];
-        }
-
-        let mensagem = '' || 'Campo obrigatório'; //no caso do evento input não ser acionado
-        let fieldset;
-        let mensagemError;
-
         if(input.type == 'text' || input.type == 'password'){
-            fieldset = input.parentNode;
-            mensagemError = fieldset.querySelector('.mensagem-erro');
-            
+            const fieldset = input.parentNode;
+            const mensagemError = fieldset.querySelector('.mensagem-erro');
+            //impede de aparecer mensagem padrão de campo inválido
+            input.addEventListener('invalid', (e) => e.preventDefault()); 
 
-            input.addEventListener('invalid', (e)=>e.preventDefault()); //impede de aparecer mensagem padrão de campo inválido
-            inputOk[i] = !input.required? true:false; //valor inicial
-
+            //Evento 'blur' para chamar mensagens de erro
             input.addEventListener('input', ()=>{
-                eval(validacoes);
+                // Chamar função de validação
+                validacoes(input, mensagens);
+                mensagem = getValidationMessage(input, mensagens) || mensagem;
 
-                for(let fieldsetName in mensagens){
-                    if(input.name == fieldsetName){ 
-                        Object.keys(mensagens[fieldsetName]).forEach(erro => {
-                            if(input.validity[erro]){
-                                mensagem = mensagens[fieldsetName][erro];//campo.validity é o ValidityState, que exibe possíveis erros de validação que ocorrem automaticamente quando interagimos com esse formulário
-                                console.log(erro);
-                                console.log(mensagem);
-                            }
-                        });
-                    }
-                }
                 //habilita e desabilita o botão de envio do form
                 if(submitBtn.id == 'submit_form'){
-                    if(input.required || input.value.length !== 0){
-                        inputOk[i] = input.checkValidity()? true:false;
-                    }else{
-                        inputOk[i] = true;
-                    }
-                    let allOk = inputOk.every(state => state === true);
-                    submitBtn.disabled = allOk? false:true;
+                    const isValid = input.checkValidity();
+                    inputOk[i] = input.required ? isValid : true;
+
+                    submitBtn.disabled = !inputOk.every(state => state);
                 }
     
             });
-    
-            input.addEventListener('blur', ()=>{
-                mensagemError.textContent = '';//reset
-                const checkError = input.checkValidity(); //verifica a validade do campo (se contém algum erro, retorna 'false', se não há erros, retorna 'true')
-                mensagemError.textContent = !checkError? mensagem:'';
-                mensagemError.textContent !== ''? fieldset.classList.add('error'):fieldset.classList.remove('error');
+            
+            //Evento 'blur' para exibir as mensagens de erro, se houver
+            input.addEventListener('blur', () => {
+                const isValid = input.checkValidity(); //verifica a validade do campo (se contém algum erro, retorna 'false', se não há erros, retorna 'true')
+                const errorMessage = isValid ? '' : mensagem;
+
+                mensagemError.textContent = errorMessage;
+                fieldset.classList.toggle('error', !isValid);
             });
-    
-            eval(formatacoes);
+            
+            // Chamar função de formatação
+            formatacoes(input);
 
         }else if(input.type === 'radio'){
             validaRadio(input, mensagens);
-            
-            for(let fieldsetName in mensagens){
-                if(input.name == fieldsetName){ 
-                    Object.keys(mensagens[fieldsetName]).forEach(erro => {
-                        if(input.validity[erro]){
-                            mensagem = mensagens[fieldsetName][erro];
-                        }
-                    });
-                }
-            }
-
         }else if(input.type === 'checkbox' && input.required){
             validaCheckbox(input, mensagens);
         }
     });
+}
+
+export function getValidationMessage(input, mensagens) {
+    if (!mensagens[input.name]) {
+        return '';
+    }
+
+    for (const [erro, mensagem] of Object.entries(mensagens[input.name])) {
+        if (input.validity[erro]) {
+            return mensagem;
+        }
+    }
+
+    return '';
 }
 
 export function checkError(input, condition, erro, mensagens){
@@ -84,6 +70,43 @@ export function checkError(input, condition, erro, mensagens){
         input.setCustomValidity('')
         delete mensagens[input.name]['customError'];
     }
+}
+
+function loadLocalStorage(input) {
+    const cadastro = JSON.parse(localStorage.getItem('cadastro'));
+    if (cadastro && cadastro[input.name]) {
+        input.value = cadastro[input.name];
+    }
+}
+
+export function validacoes(input, mensagens){
+    const validacoes = {
+        email: validaEmail,
+        cpf: validaCPF,
+        senha: validaSenha,
+        rep_senha: repSenha,
+        nascimento: validaData,
+        celular: validaTelefone,
+        whatsapp: validaTelefone
+    };
+
+    if (validacoes[input.name]) {
+        validacoes[input.name](input, mensagens);
+    }
+}
+
+export function formatacoes(input){
+    const formatacoes = {
+        celular: formataTelefone,
+        whatsapp: formataTelefone,
+        cpf: formataCPF,
+        nascimento: formataData
+    };
+
+    if (formatacoes[input.name]) {
+        formatacoes[input.name](input);
+    }
+
 }
 //E-MAIL
 export function validaEmail(input, mensagens){
@@ -224,42 +247,48 @@ export function formataData(input){
 }
 
 // GÊNERO
-export function validaRadio(input, mensagens){
-    let radioCheck = [];
-    const fieldset = input.parentNode.parentNode;
+export function validaRadio(input, errorMessages) {
+    const fieldset = input.closest('fieldset');
     const inputs = fieldset.querySelectorAll('[data-input]');
-    const mensagemError = fieldset.querySelector('.mensagem-erro');
+    const errorMessageElement = fieldset.querySelector('.mensagem-erro');
     
-    Array.from(inputs).forEach((radio, i) => radioCheck[i] = radio.checked? true:false);
-    let radioState = radioCheck.some(check => check == true);
+    const isChecked = Array.from(inputs).some(radio => radio.checked);
     
-    if(!radioState){ 
-        const erro = 'Por favor, selecione uma opção';
-        input.setCustomValidity(erro);
-        mensagens[input.name]['customError'] = erro;
+    if (!isChecked) { 
+        const customError = 'Por favor, selecione uma opção';
+        input.setCustomValidity(customError);
+        errorMessages[input.name] = { customError };
         fieldset.classList.add('error');
-    }
+    } 
     
     fieldset.classList.remove('error');
-    input.addEventListener('change', ()=>{
-        input.setCustomValidity('')
-        delete mensagens[input.name]['customError'];
 
-        fieldset.classList.remove('error');
-        mensagemError.textContent = '';
-
-        for(let fieldsetName in mensagens){
-            if(input.name == fieldsetName){ 
-                Object.keys(mensagens[fieldsetName]).forEach(erro => {
-                    if(input.validity[erro]){
-                        mensagemError.textContent = mensagens[fieldsetName][erro];
-                        mensagemError.textContent !== ''? fieldset.classList.add('error'):fieldset.classList.remove('error');
-                    }
-                });
-            }
-        }
+    input.addEventListener('change', () => {
+        input.setCustomValidity('');
+        delete errorMessages[input.name].customError;
+        updateErrorState(input, fieldset, errorMessageElement, errorMessages);
     });
 }
+
+function updateErrorState(input, fieldset, errorMessageElement, errorMessages) {
+    errorMessageElement.textContent = '';
+    fieldset.classList.remove('error');
+
+    const inputErrors = errorMessages[input.name];
+
+    if (inputErrors) {
+        for (const errorType in inputErrors) {
+            if (input.validity[errorType]) {
+                errorMessageElement.textContent = inputErrors[errorType];
+                if (errorMessageElement.textContent) {
+                    fieldset.classList.add('error');
+                }
+                break;
+            }
+        }
+    }
+}
+
 //TERMOS
 export function validaCheckbox(input, mensagens){
     const fieldset = input.parentNode.parentNode;

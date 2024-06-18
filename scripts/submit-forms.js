@@ -1,6 +1,5 @@
 import {validaForm} from "./validacoes.js";
 
-//const form = document.querySelector('.formulario');
 const formContainer= document.querySelector('.formulario__container-grid');
 const formularioOk = document.querySelector('.formulario__cadastro-ok');
 const formInput = document.querySelectorAll('[data-input]');
@@ -25,8 +24,8 @@ const mensagensForm = {
 }
 
 export function submitForm(){
-    formContainer.addEventListener('submit', (e)=>{
-        e.preventDefault(); //evita a página recarregar ao submeter formulário
+    formContainer.addEventListener('submit', (e) => {
+        e.preventDefault(); // Previne o comportamento padrão do formulário (envio da página)
         
         const formulario = {
             "nome": e.target.elements["nome"].value,
@@ -41,20 +40,5 @@ export function submitForm(){
     });
 }
 
-let validacaoFuncForm = 
-`if(input.name === 'email'){
-    validaEmail(input, mensagens);
-} 
-if(input.name === 'celular'){
-    validaTelefone(input, mensagens);
-}`;
-
-let formatacaoFuncForm = 
-`if(input.name === 'celular'){
-    formataTelefone(input);
-}`;
-
-validaForm(formInput, mensagensForm, validacaoFuncForm, formatacaoFuncForm, formBtn);
-
-
+validaForm(formInput, mensagensForm, formBtn);
 

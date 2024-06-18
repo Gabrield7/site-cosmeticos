@@ -411,6 +411,17 @@ body.dark .botao__login:hover{
     .cabecalho__cadastro{
         padding: 1rem 2rem;
     }
+
+    .cabecalho__cadastro{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cabecalho__logo__cadastro{
+        grid-column: 1/2;
+        justify-self: start;
+    }
+    .cadastro__modo{
+        grid-column: 2/3;
+    }
     
     /* INPUT CHECKBOX */
     .cadastro__title{
