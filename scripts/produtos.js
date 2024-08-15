@@ -15,7 +15,7 @@ const produtoContainerSlider = document.querySelectorAll('.produtos__container__
 //função para aplicar o slide aos cards
 export function sliderProdutos(){
     produtoContainerSlider.forEach(slide=>{
-        const id = slide.parentNode.getAttribute('id')
+        const id = slide.parentNode.getAttribute('id');
         new Glider(slide, {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -130,11 +130,11 @@ export async function produtos(){
 export async function insereProdutos(id){
     //let cards = '';
     const dados = await produtos();
-    const listKeys = Object.keys(dados.produtos[0]); //todos os objetos do.json tem as chaves iguais
+    const listKeys = Object.keys(dados[0]); //todos os objetos do.json tem as chaves iguais
     
     // Função para filtrar produtos por categoria
     const filtrados = (categoria) => { 
-        return dados.produtos.filter(objeto => {
+        return dados.filter(objeto => {
             // Verifica se alguma das chaves do objeto tem o valor igual à categoria
             return listKeys.some(key => objeto[key] === categoria); //.some verifica se algum dos itens do arrays obedece a condição repassada
         });

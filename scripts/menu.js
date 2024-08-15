@@ -77,7 +77,7 @@ export async function insereColuna(secao, tela) {
 // Gera HTML para seções com base na tela (Desktop ou Mobile) e insere no DOM
 export async function insereSecao(tela){
     const sectionsData = await fetchMenuSections();
-    const sectionsHTML = await Promise.all(sectionsData.menu.map(async section => {
+    const sectionsHTML = await Promise.all(sectionsData.map(async section => {
         const columnsHTML = await insereColuna(section, tela);
         const titleHTML = tela === 'mobile' ? `
             <button aria-label='${section.titulo}' class='item__link__${tela}'>
